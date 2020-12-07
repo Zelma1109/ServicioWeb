@@ -1,0 +1,28 @@
+Etiquetas
+------------------------------------------------------------
+Programador= Asignacion de Tareas
+------------------------------------------------------------
+*Fecha
+*Grid
+-----------------
+Programa de producción = Verificador de cumplir las tareas asignadas
+-------------------------------------------------------------
+*Grid
+*Checador de status
+------------------
+
+
+
+
+------------------------------------------------------------
+
+Administrador = escritorio altas/bajas 
+------------------------------------------------------------
+*Registros (personal, productos, clientes, proveedores)
+*Usuarios(acceso al sistema /servicios
+
+**Consultas (Consultas y reportes)
+
+-------------------------------------------------------------
+
+

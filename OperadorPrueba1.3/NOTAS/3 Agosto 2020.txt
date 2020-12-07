@@ -1,0 +1,17 @@
+------------------------------------------
+
+cuadros - Lienzo   = Trigger actualizar datos al modificar
+---------------------------------------------
+tipo de unidad = etiqueta, acorde al modelo.
+modelo-talla (Combobox)
+---------------------------------------------
+Combobox numerico 1-1000
+---------------------------------------------
+
+*Actualizar campos (nuevos) 
+*Actualizar la bd
+*Agregar un grid
+**Check list en el procesoo  X
+**Fecha
+----------------------------------------------
+

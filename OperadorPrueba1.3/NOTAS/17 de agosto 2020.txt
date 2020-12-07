@@ -1,0 +1,11 @@
+*Corregir la bd:
+	-(not null)
+	-Incoorporar campos de costo x proceso (proceso)
+	-Incoorporar campo de costo total de productos.
+	-Incoorporar campo de eqtiqueta(pares, unidad etc).
+*Validacion de campos
+*grid
+** LLenar la Etiqueta
+--------------------------------------------------------------
+*Diseñar los modulos de escritorio
+--------------------------------------------------------------

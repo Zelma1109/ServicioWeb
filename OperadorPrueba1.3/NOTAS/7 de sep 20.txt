@@ -1,0 +1,44 @@
+ALTAS
+
+
+
+edad--fecha de nacimiento
+
+no. empleado
+puesto -------BD
+no. seguridad social
+
+Domicilio:
+-Calle
+-no. 
+-colonia
+-ciudad
+-eSTADO 
+-Cod. Postal
+
+
+-------------------------------
+Busqueda:
+-nombre
+-no.empleado
+-puesto
+
+-------------------------------
+PRODUCTOS
+
+ESTRUCTURALDO------
+
+HISTORIAL....
+Combo... Procesos mas casillas
+Costo de venta-...
+unidad... unidad nueva......
+Actualizacion de fecha------
+--------------------------------
+USUARIOS
+
+Confirmacion de contraseña
+puesto
+---------------------------------
+
+
+

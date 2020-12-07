@@ -1,0 +1,33 @@
+Modulos:
+
+-------------------------------Web:------------------------------------------------------------------------------------------------------------
+(ZR)   Programador : Asignacion de tareas.
+
+(JL)   Programa de produccion: Checador de cumplimiento de tareas asignadas.
+
+
+----------------------------(ZR)Escritorio: Control de Acceso (admin(total),usuario normal (Clientes y provedores, pagos, producción)-----------
+
+(ZR)   Registros(Altas, bajas, Modificaciones): Empleados, Productos (modelos, procesos, costos x proceso).  xx
+(ZR)   Usuarios: Acceso Web, Acceso Escritorio.
+(ZR)   Reportes: dfghjklñ
+(JL)   Produccion(stock y reportes): Informacion de lo que se esta produciendo en (tiempo real).
+------------------------------------------------------------------------------------------------------------------------------------------------
+(JL)   Nomina: generacion de tiktes para pagos de empleados en base a lo producido.
+(JL)   CONTROL:
+	-Clientes y proveedores: 
+	-Clientes: Registros, Facturas, pagos (saldos, abonos).
+	-Proveedores: Registros, compras.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+*Implementación 
+
+
+
+
+
+
+
+
+
+
