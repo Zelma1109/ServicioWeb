@@ -78,24 +78,32 @@ namespace OperadorPrueba1._3
         }
         protected void Producto_SelectedIndexChanged(object sender, EventArgs e)
         {
-                int idproducto = Convert.ToInt32(Producto.SelectedIndex);
-                Modelos.DataSource = consultar("select fkidmodelo from productos where producto=" + idproducto);
-                Modelos.DataTextField = "fkidmodelo";
-                Modelos.DataValueField = "fkidmodelo";
-                Modelos.DataBind();
-                Modelos.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
-                //--------------------------------------------------------------------------
+            int idproducto = Convert.ToInt32(Producto.SelectedIndex);
+            Modelos.DataSource = consultar("select fkidmodelo, fkidunidad from productos where producto=" + idproducto);
+            Modelos.DataTextField = "fkidmodelo";
+            Modelos.DataValueField = "fkidmodelo";
+            Modelos.DataBind();
+            /*/--------------------------------------------------------------------------                  
+            
+            string un;
+            un = unidad.Text;
+            cn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM '" + un + "'", cn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            unidad.Text = dt.Rows[""];
+            cn.Close();
+            //--------------------------------------------------------------------------*/
 
-                //--------------------------------------------------------------------------
-                Processos.ClearSelection();
-                Processos.Items.Clear();
+            Processos.ClearSelection();
+            Processos.Items.Clear();
         }
 
         protected void unidad_TextChanged(object sender, EventArgs e)
         {
             unidad.Enabled = false;
         }
-
         protected void asignar_Click(object sender, EventArgs e)
         {
 
