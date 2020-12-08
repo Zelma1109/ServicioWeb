@@ -35,6 +35,13 @@
         }
 
         #heading { color: rgb(255,202,24);}
+        .auto-style2 {
+            width: 33%;
+            height: 80px;
+        }
+        .auto-style3 {
+            width: 135px;
+        }
     </style>
 </head>
 <body style="height: 719px">
@@ -66,54 +73,58 @@
                             <!-- A QUI IRA LO DE LA ASIGNACION DE LAS TARERAS-->
                      <br /><br />
                     <div>
-                    <br /><font color="black"> Linea :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                    &nbsp;<br />
-                        <asp:DropDownList ID="line" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="249px">
+                    <br /><font color="black">Linea :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+                        <asp:DropDownList ID="line" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="249px" TabIndex="1">
                         </asp:DropDownList>
                     </div>
 
                      <div>
-                    <br /><font color="black"> Producto :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                         <font color="yellow">
-                         <br />&nbsp;<asp:DropDownList ID="Producto" runat="server" AutoPostBack="True" ForeColor="Black"  Height="27px" Width="249px" OnSelectedIndexChanged="Producto_SelectedIndexChanged">
+                    <br /><font color="black"> Producto :&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="yellow"><br />&nbsp;<asp:DropDownList ID="Producto" runat="server" AutoPostBack="True" ForeColor="Black"  Height="27px" Width="245px" OnSelectedIndexChanged="Producto_SelectedIndexChanged" TabIndex="2">
                          </asp:DropDownList>
                          </font>
                          </div>
 
                      <div>
-                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;<font color="yellow"><asp:Label ID="unidad" runat="server" Text="" ForeColor="Black"></asp:Label>
-                         </font></font><br />
-                         <br /><font color="yellow">
-                         <asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="27px" Width="249px" AutoPostBack="True" OnSelectedIndexChanged="Modelos_SelectedIndexChanged">
+                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;</font><br /><font color="yellow">
+                         <asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="27px" Width="178px" AutoPostBack="True" OnSelectedIndexChanged="Modelos_SelectedIndexChanged" TabIndex="3">
                          </asp:DropDownList>
                          </font>&nbsp;
+                         <asp:TextBox ID="unidad" runat="server" Width="64px" ForeColor="Black" OnTextChanged="unidad_TextChanged">       -</asp:TextBox>
                    </div>
                      
 
                      <div>
                          <br /><font color="black"> Procesos:&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                         <asp:RadioButtonList ID="Processos" runat="server"  Height="27px" Width="249px" AutoPostBack="True">
-                         </asp:RadioButtonList>
+                         <asp:CheckBoxList ID="Processos" runat="server" AutoPostBack="True" BorderColor="#CCCCCC" BorderStyle="Solid" RepeatLayout="Flow" ForeColor="Black" CssClass="DefaultCheckBoxList" TabIndex="4" Width="247px">
+                             <asp:ListItem></asp:ListItem>
+                         </asp:CheckBoxList>
+                         <br />
                     </div>
 
 
                      <div>
-                         <br /> <br /><font color="black">Cantidad :&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                         <br /><font color="black">Cantidad :&nbsp;&nbsp;&nbsp;&nbsp;<br />
                          <br />
                          </font>
-                         <asp:TextBox ID="Cantidad_text" runat="server"  Height="27px" Width="249px" ForeColor="Black"></asp:TextBox>
+                         <asp:TextBox ID="Cantidad_text" runat="server"  Height="27px" Width="249px" ForeColor="Black" TabIndex="5" TextMode="Number"></asp:TextBox>
                          <br />
                          <br />
                     </div>
 
                      <div>
                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         <asp:Button ID="asignar" runat="server" Text="Button" ForeColor="Black" Width="109px" />
+                         <table class="auto-style2">
+                             <tr>
+                                 <td class="auto-style3">
+                                        <font color="yellow">
+                                        <asp:Button ID="Asignar" runat="server" Text="Asignar" ForeColor="Black" Width="109px" OnClick="asignar_Click" TabIndex="6" />
+                                 </td>
+                                 <td>
+                                        <asp:Button ID="Cancelar" runat="server" Text="Cancelar" ForeColor="Black" OnClick="Cancelar_Click" />
+                                 </td>
+                             </tr>
+                         </table>
                          <br />
-                    </div>
-
-                     <div>
-
                      </div>
 
               <!----------------------------------------------------------------------------->

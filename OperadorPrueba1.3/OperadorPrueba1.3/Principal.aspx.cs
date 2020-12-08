@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Web.UI.WebControls;
 
 namespace OperadorPrueba1._3
 {
@@ -22,7 +9,6 @@ namespace OperadorPrueba1._3
     {
         ConexionUsuarios c = new ConexionUsuarios();
         MySqlConnection cn;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,6 +16,14 @@ namespace OperadorPrueba1._3
                 Lineas();
                 ComenzarLLenado();
             }
+
+            //Campos Limpios
+            Processos.Items.Clear();
+            unidad.Text = "";
+            Cantidad_text.Text = "";
+
+            //bloqueo de texto en campos
+            unidad.Enabled = false;
         }
         public DataSet consultar(string strSQL)
         {
@@ -51,16 +45,24 @@ namespace OperadorPrueba1._3
             line.DataBind();
             line.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
         }
-
+        private void procesos()
+        {
+            Processos.DataSource = consultar("select * from procesos");
+            Processos.DataTextField = "proceso";
+            Processos.DataValueField = "idProcs";
+            Processos.DataBind();
+            Processos.ClearSelection();
+        }
         private void ComenzarLLenado()
         {
             //------------------------------------------------------------------------------------
-            Producto.DataSource = consultar("select * from productos");
-            Producto.DataTextField = "producto";
-            Producto.DataValueField = "idproducto";
+            Producto.DataSource = consultar("select * from NombreProducto");
+            Producto.DataTextField = "NombredeProducto";
+            Producto.DataValueField = "idNombreProducto";
             Producto.DataBind();
             Producto.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
             Modelos.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
+            Processos.ClearSelection();
             //-----------------------------------------------------------------------------------
         }
         protected void DropDown_Line_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,24 +70,51 @@ namespace OperadorPrueba1._3
         }
         protected void Modelos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idproducto = Convert.ToInt32(Modelos.SelectedValue);
-            Processos.DataSource = consultar("select idproducto, producto, fkidmodelo, fkidunidad, produccion,materiaprima,total,precioVenta,fechaInt,fechamod from productos where idproducto=" + idproducto);
-            Processos.DataTextField = "proceso";
-            Processos.DataValueField = "procesoID";
-            Processos.DataBind();
-            Processos.ClearSelection();
+            if (Producto.AppendDataBoundItems == false)
+            {
+                procesos();
+                Processos.ClearSelection();
+            }
         }
-
         protected void Producto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idproducto = Convert.ToInt32(Producto.SelectedValue);
-            Modelos.DataSource = consultar("select fkidmodelo from productos where idproducto=" + idproducto);
-            Modelos.DataTextField = "fkidmodelo";
-            Modelos.DataValueField = "fkidmodelo";
-            Modelos.DataBind();
-            Modelos.DataBind();
-            Modelos.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
-            Processos.ClearSelection();
+                int idproducto = Convert.ToInt32(Producto.SelectedIndex);
+                Modelos.DataSource = consultar("select fkidmodelo from productos where producto=" + idproducto);
+                Modelos.DataTextField = "fkidmodelo";
+                Modelos.DataValueField = "fkidmodelo";
+                Modelos.DataBind();
+                Modelos.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
+                //--------------------------------------------------------------------------
+
+                //--------------------------------------------------------------------------
+                Processos.ClearSelection();
+                Processos.Items.Clear();
+        }
+
+        protected void unidad_TextChanged(object sender, EventArgs e)
+        {
+            unidad.Enabled = false;
+        }
+
+        protected void asignar_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void Cancelar_Click(object sender, EventArgs e)
+        {
+            //Campos Limpios
+            Processos.Items.Clear();
+            line.Items.Clear();
+            Producto.Items.Clear();
+            Modelos.Items.Clear();
+            Processos.Items.Clear();
+            unidad.Text = "";
+            Cantidad_text.Text = "";
+
+            //Aqui volvemos a llenar
+            Lineas();
+            ComenzarLLenado();
+            //procesos();
         }
     }
 }

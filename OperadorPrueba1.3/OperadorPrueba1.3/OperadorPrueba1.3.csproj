@@ -123,7 +123,6 @@
     <Content Include="CSS\js\xxa.js" />
     <Content Include="CSS\js\jquery.js" />
     <Content Include="CSS\js\npm.js" />
-    <Content Include="verificar.aspx" />
     <None Include="CSS\xx" />
     <Content Include="img\1.jpg" />
     <Content Include="img\login.css" />
@@ -156,13 +155,6 @@
     </Compile>
     <Compile Include="usuarios.aspx.designer.cs">
       <DependentUpon>usuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="verificar.aspx.cs">
-      <DependentUpon>verificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="verificar.aspx.designer.cs">
-      <DependentUpon>verificar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

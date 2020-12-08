@@ -51,15 +51,6 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.DropDownList Producto;
 
         /// <summary>
-        /// Control unidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label unidad;
-
-        /// <summary>
         /// Control Modelos.
         /// </summary>
         /// <remarks>
@@ -69,13 +60,22 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.DropDownList Modelos;
 
         /// <summary>
+        /// Control unidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox unidad;
+
+        /// <summary>
         /// Control Processos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList Processos;
+        protected global::System.Web.UI.WebControls.CheckBoxList Processos;
 
         /// <summary>
         /// Control Cantidad_text.
@@ -87,12 +87,21 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.TextBox Cantidad_text;
 
         /// <summary>
-        /// Control asignar.
+        /// Control Asignar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button asignar;
+        protected global::System.Web.UI.WebControls.Button Asignar;
+
+        /// <summary>
+        /// Control Cancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancelar;
     }
 }
