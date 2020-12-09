@@ -36,11 +36,11 @@
 
         #heading { color: rgb(255,202,24);}
         .auto-style2 {
-            width: 33%;
+            width: 28%;
             height: 80px;
         }
         .auto-style3 {
-            width: 135px;
+            width: 128px;
         }
     </style>
 </head>
@@ -79,24 +79,26 @@
                     </div>
 
                      <div>
-                    <br /><font color="black"> Producto :&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="yellow"><br />&nbsp;<asp:DropDownList ID="Producto" runat="server" AutoPostBack="True" ForeColor="Black"  Height="27px" Width="245px" OnSelectedIndexChanged="Producto_SelectedIndexChanged" TabIndex="2">
+                    <br /><font color="black"> Producto :&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="yellow"><br />
+                         <asp:DropDownList ID="Producto" runat="server" AutoPostBack="True" ForeColor="Black"  Height="27px" Width="245px" OnSelectedIndexChanged="Producto_SelectedIndexChanged" TabIndex="2">
                          </asp:DropDownList>
                          </font>
                          </div>
 
                      <div>
-                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;</font><br /><font color="yellow">
+                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unidad:
+                          </font><br /><font color="yellow">
                          <asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="27px" Width="178px" AutoPostBack="True" OnSelectedIndexChanged="Modelos_SelectedIndexChanged" TabIndex="3">
                          </asp:DropDownList>
                          </font>&nbsp;
-                         <asp:TextBox ID="unidad" runat="server" Width="64px" ForeColor="Black" OnTextChanged="unidad_TextChanged">       -</asp:TextBox>
+                         <asp:TextBox ID="unidad" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="57px"></asp:TextBox>
                    </div>
                      
 
                      <div>
                          <br /><font color="black"> Procesos:&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                         <asp:CheckBoxList ID="Processos" runat="server" AutoPostBack="True" BorderColor="#CCCCCC" BorderStyle="Solid" RepeatLayout="Flow" ForeColor="Black" CssClass="DefaultCheckBoxList" TabIndex="4" Width="247px">
-                             <asp:ListItem></asp:ListItem>
+                         <asp:CheckBoxList ID="Processos" runat="server" BorderColor="#CCCCCC" BorderStyle="Solid" RepeatLayout="Flow" ForeColor="Black" CssClass="DefaultCheckBoxList" TabIndex="4" Width="247px" OnSelectedIndexChanged="Processos_SelectedIndexChanged">
                          </asp:CheckBoxList>
                          <br />
                     </div>
@@ -106,7 +108,7 @@
                          <br /><font color="black">Cantidad :&nbsp;&nbsp;&nbsp;&nbsp;<br />
                          <br />
                          </font>
-                         <asp:TextBox ID="Cantidad_text" runat="server"  Height="27px" Width="249px" ForeColor="Black" TabIndex="5" TextMode="Number"></asp:TextBox>
+                         <asp:TextBox ID="Cantidad_text" runat="server"  Height="27px" Width="245px" ForeColor="Black" TabIndex="5" TextMode="Number"></asp:TextBox>
                          <br />
                          <br />
                     </div>
@@ -117,7 +119,7 @@
                              <tr>
                                  <td class="auto-style3">
                                         <font color="yellow">
-                                        <asp:Button ID="Asignar" runat="server" Text="Asignar" ForeColor="Black" Width="109px" OnClick="asignar_Click" TabIndex="6" />
+                                        <asp:Button ID="Asignar" runat="server" Text="Asignar" ForeColor="Black" Width="101px" OnClick="asignar_Click" TabIndex="6" />
                                  </td>
                                  <td>
                                         <asp:Button ID="Cancelar" runat="server" Text="Cancelar" ForeColor="Black" OnClick="Cancelar_Click" />

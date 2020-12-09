@@ -71,7 +71,7 @@
                  <div /><div><br /></div>
 
                 <div style="text-align:center;">
-                    <asp:Button ID="btn_Asignar" runat="server" Text="Asignar" OnClick="btn_Asignar_Click" TabIndex="6" BackColor="#E1E6E9" BorderColor="#000066" BorderStyle="Solid" Width="94px" />
+                    <asp:Button ID="btn_Asignar" runat="server" Text="Asignar" OnClick="btn_Asignar_Click" TabIndex="6" BackColor="#E1E6E9" BorderColor="#000066" BorderStyle="Solid" Width="94px" style="height: 26px" />
                 </div>
                 <div /><div><br /><br /></div>
             </div>
