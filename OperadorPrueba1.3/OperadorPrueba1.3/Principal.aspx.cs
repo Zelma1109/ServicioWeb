@@ -52,8 +52,6 @@ namespace OperadorPrueba1._3
             Processos.DataTextField = "proceso";
             Processos.DataValueField = "idProcs";
             Processos.DataBind();
-
-
             Processos.ClearSelection();
         }
         private void ComenzarLLenado()
@@ -118,7 +116,66 @@ namespace OperadorPrueba1._3
         }
         protected void asignar_Click(object sender, EventArgs e)
         {
-          
+
+            /*  cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
+              MySqlCommand cmd = new MySqlCommand("AgregarTareas", cn);
+
+              cmd.CommandType = CommandType.StoredProcedure;
+
+              cmd.Parameters.Add("p_emplinea", MySqlDbType.VarChar).Value = line.Text.Trim();
+              cmd.Parameters.Add("p_producto", MySqlDbType.VarChar).Value = Producto.Text.Trim();
+              cmd.Parameters.Add("p_modelo", MySqlDbType.VarChar).Value = Modelos.Text.Trim();
+              cmd.Parameters.Add("p_unidad", MySqlDbType.VarChar).Value = unidad.Text.Trim();
+              cmd.Parameters.Add("p_procesos", MySqlDbType.VarChar).Value = Processos.Items;
+              cmd.Parameters.Add("p_cantidad", MySqlDbType.VarChar).Value = Cantidad_text.Text.Trim();
+
+
+              cn.Open();
+              cmd.ExecuteNonQuery();
+              cn.Close();
+              MessageBox.Show("ASIGNACION CORRECTA");*/
+
+
+            if (!string.IsNullOrEmpty(line.Text) && !string.IsNullOrEmpty(Producto.Text) &&
+                           !string.IsNullOrEmpty(Modelos.Text) &&
+                           !string.IsNullOrEmpty(Processos.Text) && !string.IsNullOrEmpty(Cantidad_text.Text) == true)
+            {
+                cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
+                MySqlCommand cmd = new MySqlCommand("AgregarTareas", cn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_emplinea", MySqlDbType.VarChar).Value = line.Text.Trim();
+                cmd.Parameters.Add("p_producto", MySqlDbType.VarChar).Value = Producto.Text.Trim();
+                cmd.Parameters.Add("p_modelo", MySqlDbType.VarChar).Value = Modelos.Text.Trim();
+                cmd.Parameters.Add("p_unidad", MySqlDbType.VarChar).Value = unidad.Text.Trim();
+                cmd.Parameters.Add("p_procesos", MySqlDbType.VarChar).Value = Processos.Text.Trim();
+                cmd.Parameters.Add("p_cantidad", MySqlDbType.VarChar).Value = Cantidad_text.Text.Trim();
+
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                MessageBox.Show("ASIGNACION CORRECTA");
+
+            }
+            else
+            {
+                MessageBox.Show("FAVOR DE LLENAR LOS CAMPOS QUE SE ENCUENTRAN VACIOS", "CAMPOS VACIOS");
+
+                //Campos Limpios
+                Processos.Items.Clear();
+                line.Items.Clear();
+                Producto.Items.Clear();
+                Modelos.Items.Clear();
+                Processos.Items.Clear();
+                unidad.Text = "";
+                Cantidad_text.Text = "";
+
+                //Aqui volvemos a llenar
+                Lineas();
+                ComenzarLLenado();
+            }
         }
         protected void Cancelar_Click(object sender, EventArgs e)
         {
