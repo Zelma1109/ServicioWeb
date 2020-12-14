@@ -63,8 +63,7 @@
 
                 <div>
                     <br /><font color="white">Cantidad :</font><br />
-                    &nbsp;<asp:TextBox ID="txtCantidad" runat="server" Type="number" min="1" MaxLength="1000" Width="204px" OnTextChanged="txtCantidad_TextChanged" Height="19px" TabIndex="5" CssClass="auto-style2"></asp:TextBox>
-                    <br />
+                    &nbsp;<br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCantidad" ErrorMessage="Campos vacios" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
 

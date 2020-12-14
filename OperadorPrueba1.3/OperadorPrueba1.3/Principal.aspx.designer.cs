@@ -78,13 +78,13 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.CheckBoxList Processos;
 
         /// <summary>
-        /// Control Cantidad_text.
+        /// Control txt_c.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cantidad_text;
+        protected global::System.Web.UI.WebControls.TextBox txt_c;
 
         /// <summary>
         /// Control Asignar.

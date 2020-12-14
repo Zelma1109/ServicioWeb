@@ -156,6 +156,7 @@
     <Compile Include="usuarios.aspx.designer.cs">
       <DependentUpon>usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="validaciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\css\bootstrap-theme.css.map" />

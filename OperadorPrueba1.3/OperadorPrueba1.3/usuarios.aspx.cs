@@ -99,7 +99,7 @@ namespace OperadorPrueba1._3
                 cmd.Parameters.Add("@producto", SqlDbType.VarChar).Value = Product.SelectedItem.Value;
                 cmd.Parameters.Add("@modelo", SqlDbType.VarChar).Value = mod.Text.Trim();
                 cmd.Parameters.Add("@proceso", SqlDbType.VarChar).Value = Proces.Text.Trim();
-                cmd.Parameters.Add("@cantidad", SqlDbType.VarChar).Value = txtCantidad.Text.Trim();
+                //cmd.Parameters.Add("@cantidad", SqlDbType.VarChar).Value = txt_c.Text.Trim();
                 cmd.Connection = con;
                 con.Open();
                 cmd.ExecuteNonQuery();          
@@ -116,7 +116,7 @@ namespace OperadorPrueba1._3
             Product.Items.Clear();
             mod.Items.Clear();
             Proces.Items.Clear();
-            txtCantidad.Text = "";
+            //txtCantidad.Text = "";
 
         }
         protected void Line_SelectedIndexChanged(object sender, EventArgs e)

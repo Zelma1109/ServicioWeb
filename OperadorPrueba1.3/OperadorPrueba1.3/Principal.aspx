@@ -86,14 +86,13 @@
                          </div>
 
                      <div>
-                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unidad:
+                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           </font><br /><font color="yellow">
-                         <asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="27px" Width="178px" AutoPostBack="True" OnSelectedIndexChanged="Modelos_SelectedIndexChanged" TabIndex="3">
+                         <asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="26px" Width="154px" AutoPostBack="True" OnSelectedIndexChanged="Modelos_SelectedIndexChanged" TabIndex="3">
                          </asp:DropDownList>
                          </font>&nbsp;
-                         <asp:TextBox ID="unidad" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="57px"></asp:TextBox>
-                   </div>
+                         <asp:TextBox ID="unidad" runat="server" AutoPostBack="True" ForeColor="Black" OnTextChanged="unidad_TextChanged" Width="80px"></asp:TextBox>
+                         </div>
                      
 
                      <div>
@@ -105,11 +104,8 @@
 
 
                      <div>
-                         <br /><font color="black">Cantidad :&nbsp;&nbsp;&nbsp;&nbsp;<br />
-                         <br />
-                         </font>
-                         <asp:TextBox ID="Cantidad_text" runat="server"  Height="27px" Width="245px" ForeColor="Black" TabIndex="5" TextMode="Number"></asp:TextBox>
-                         <br />
+                         <br /><font color="black">Cantidad :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+                         <asp:TextBox ID="txt_c" runat="server" Type="number" min="1" MaxLength="1000"  TabIndex="5" Height="26px" Width="243px" ForeColor="Black"></asp:TextBox>
                          <br />
                     </div>
 
