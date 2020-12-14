@@ -4,6 +4,13 @@ using System.Data;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using MySql.Data.Common;
+using System.Data.SqlClient;
+
 
 namespace OperadorPrueba1._3
 {
@@ -12,7 +19,10 @@ namespace OperadorPrueba1._3
         ConexionUsuarios c = new ConexionUsuarios();
         MySqlConnection cn;
         protected void Page_Load(object sender, EventArgs e)
-        {        
+        {
+            //------------------
+            historial();
+            //------------------
             if (!IsPostBack)
             {
                 Lineas();
@@ -21,6 +31,14 @@ namespace OperadorPrueba1._3
 
             //bloquear campo de texto
             unidad.Enabled = false;
+        }
+        private void historial()
+        {
+            //Funciona plox----
+            Historial_Total.DataSource = consultar("Select fechaAsignacion as 'Asignacion:', emplinea as 'Linea'," +
+                                                    " producto as 'Producto', modelo as 'Modelo', unidad as 'Unidad'," +
+                                                    " procesos as 'Procesos', cantidad as 'Cantidad' from tareas_Asignadas;");
+            Historial_Total.DataBind();
         }
         public DataSet consultar(string strSQL)
         {
@@ -138,6 +156,7 @@ namespace OperadorPrueba1._3
             MessageBox.Show("ASIGNACION CORRECTA");
 
             limpiarycargar();
+            historial();
         }
         protected void asignar_Click(object sender, EventArgs e)
         {

@@ -71,6 +71,7 @@
 
                  <div role="tabpanel" class="tab-pane active" id="home">
                             <!-- A QUI IRA LO DE LA ASIGNACION DE LAS TARERAS-->
+                   
                      <br /><br />
                     <div>
                     <br /><font color="black">Linea :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
@@ -122,6 +123,8 @@
                                  </td>
                              </tr>
                          </table>
+                         <div>
+                         </div>
                          <br />
                      </div>
 
@@ -129,7 +132,30 @@
                  </div>
                  <div role="tabpanel" class="tab-pane" id="profile">
                             <!-- A QUI IRA LO DEl CHECADOR DE LAS TARERAS-->
-                 </div>
+
+                      <div >
+                     </div>
+                      <div >
+                      </div>
+             <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                     <div style="width:100%; height:100%; overflow:auto;">
+                             <asp:GridView ID="Historial_Total" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
+                                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                 <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                 <RowStyle BackColor="White" ForeColor="#330099" />
+                                 <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                 <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                 <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                             </asp:GridView>
+                         </div>
+                        </div>
+                       </div>
+                     </div>
               </div>
          </div>
      </section>
