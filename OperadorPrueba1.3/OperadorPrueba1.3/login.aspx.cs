@@ -13,6 +13,9 @@ namespace OperadorPrueba1._3
     {
         ConexionUsuarios Us = new ConexionUsuarios();
         MySqlConnection cn;
+        //Control de usuarios
+        int tipo_usuario;
+        // //////////////////
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,17 +23,8 @@ namespace OperadorPrueba1._3
         }
         protected void Entrar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                cn.Open();
-                cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
-                
-            }
-            catch (Exception)
-            {
-
-                lblError.Text = "Usuario o contraseña incorrecta";
-            }
+           
+        
         }
         protected void txtpassword_TextChanged(object sender, EventArgs e)
         {

@@ -11,7 +11,6 @@ using System.Web.UI;
 using MySql.Data.Common;
 using System.Data.SqlClient;
 
-
 namespace OperadorPrueba1._3
 {
     public partial class Principal : System.Web.UI.Page
@@ -32,6 +31,7 @@ namespace OperadorPrueba1._3
             //bloquear campo de texto
             unidad.Enabled = false;
         }
+
         private void historial()
         {
             //Funciona plox----
@@ -170,7 +170,6 @@ namespace OperadorPrueba1._3
             else
             {
                 MessageBox.Show("FAVOR DE LLENAR LOS CAMPOS QUE SE ENCUENTRAN VACIOS", "CAMPOS VACIOS");
-
                 //Aqui no se limpian los campos ya que la validacion solo retiene los campos hasta llenarlos
             }
         }
@@ -204,6 +203,10 @@ namespace OperadorPrueba1._3
         protected void unidad_TextChanged(object sender, EventArgs e)
         {
             unidad.Enabled = false;
+        }
+        protected void Buscador_TextChanged(object sender, EventArgs e)
+        {
+      
         }
     }
 }

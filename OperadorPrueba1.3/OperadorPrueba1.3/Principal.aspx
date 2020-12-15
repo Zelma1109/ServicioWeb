@@ -123,17 +123,17 @@
                                  </td>
                              </tr>
                          </table>
-                         <div>
-                         </div>
-                         <br />
-                     </div>
+                      <div>
+                    </div>
+                  <br />
+               </div>
 
               <!----------------------------------------------------------------------------->
                  </div>
                  <div role="tabpanel" class="tab-pane" id="profile">
                             <!-- A QUI IRA LO DEl CHECADOR DE LAS TARERAS-->
-
                       <div >
+                          <br />
                      </div>
                       <div >
                       </div>
@@ -163,7 +163,7 @@
    <footer id="main-footer">
         <p><font color="yellow">&copy;Guantes Industriales Wario</font></p>
     </footer> 
-<!--_____________________________________________________________________________________________ ____________-->
+<!--_________________________________________________________________________________________________________-->
         
 	   <script src="CSS/js/jquery.js"></script>
 		<script src="CSS/js/xxa.js"></script>
