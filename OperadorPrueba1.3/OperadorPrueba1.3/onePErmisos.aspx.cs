@@ -9,6 +9,12 @@ namespace OperadorPrueba1._3
         int Tipo_usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //MOSTRAR USUARIO QUE HA INGRESADO EN EL SISTEMA
+            lbl_usuarios.Text = Secc.usuario;
+
+            /////////////////////////////////////////////////
+
+
             //Control de usuarios
             Tipo_usuario = Secc.idroll;
 

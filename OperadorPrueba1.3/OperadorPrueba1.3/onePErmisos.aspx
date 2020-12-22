@@ -32,22 +32,19 @@
           text-align: center;
         }
         #heading { color: rgb(255,202,24);}
-        .auto-style4 {
-            height: 379px;
-        }
-    </style>
+        </style>
 </head>
 <body style="height: 719px">
     <form id="form1" runat="server">
 <!--____________________________________________________ Header______________________________________________-->
      <header id="main-headerXD" class="auto-style1">
-        <a id="logo-header" href="#"><h1 class ="site-name"><font color="yellow">WARIO</font></h1></a>
-         &nbsp;&nbsp;&nbsp;&nbsp;<a id="logo-header" href="#"><h1 class ="site-names"><font color="yellow">
+        <a id="logo-header" href="#"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario</font></h1></a>
+         &nbsp;&nbsp;&nbsp;&nbsp;<a id="logo-header" href="#"><h1 class ="site-names" style="width: 287px; height: 3px"><font color="yellow" size="2">
            <asp:Label ID="lbl_usuarios" runat="server" Text=""></asp:Label></h1></a>
         <nav>
             <ul><li><a><font color="yellow">
                                 <asp:Button ID="CerrarSesion" runat="server" Text="Cerrar Sesion" Height="62px" Width="95px" BackColor="#24292E" BorderColor="#24292E" BorderStyle="None" OnClick="CerrarSesion_Click"></asp:Button>
-                       </font></a></li></ul>
+            </font></a></li></ul>
         </nav>
     </header>
 <!--__________________________________________________developing_____________________________________________-->

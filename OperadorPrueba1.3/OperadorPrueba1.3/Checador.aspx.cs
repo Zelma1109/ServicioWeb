@@ -11,7 +11,10 @@ namespace OperadorPrueba1._3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //MOSTRAR USUARIO QUE HA INGRESADO EN EL SISTEMA
+            lbl_usuarios.Text = Secc.usuario;
 
+            /////////////////////////////////////////////////
         }
         protected void CerrarSesion_Click(object sender, EventArgs e)
         {

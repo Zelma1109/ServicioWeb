@@ -19,6 +19,12 @@ namespace OperadorPrueba1._3
         MySqlConnection cn;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //MOSTRAR USUARIO QUE HA INGRESADO EN EL SISTEMA
+            lbl_usuarios.Text = Secc.usuario;
+
+            /////////////////////////////////////////////////
+
+
             //------------------
             historial();
             //------------------
