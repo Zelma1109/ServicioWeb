@@ -31,7 +31,6 @@ namespace OperadorPrueba1._3
             //bloquear campo de texto
             unidad.Enabled = false;
         }
-
         private void historial()
         {
             //Funciona plox----

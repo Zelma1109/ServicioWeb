@@ -128,13 +128,12 @@
     <Content Include="img\1.jpg" />
     <Content Include="img\login.css" />
     <Content Include="img\war.jpg" />
-    <Content Include="Principal.aspx" />
+    <Content Include="onePErmisos.aspx" />
+    <Content Include="Sorteador.aspx" />
     <Content Include="Web.config" />
     <Content Include="login.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cache.cs" />
-    <Compile Include="Cargos.cs" />
     <Compile Include="Checador.aspx.cs">
       <DependentUpon>Checador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,12 +142,22 @@
       <DependentUpon>Checador.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConexionUsuarios.cs" />
-    <Compile Include="Principal.aspx.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
+    <Compile Include="control.cs" />
+    <Compile Include="Modelo.cs" />
+    <Compile Include="onePErmisos.aspx.cs">
+      <DependentUpon>onePErmisos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Principal.aspx.designer.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
+    <Compile Include="onePErmisos.aspx.designer.cs">
+      <DependentUpon>onePErmisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secc.cs" />
+    <Compile Include="Sorteador.aspx.cs">
+      <DependentUpon>Sorteador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sorteador.aspx.designer.cs">
+      <DependentUpon>Sorteador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="login.aspx.cs">
@@ -158,8 +167,7 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="userDatos.cs" />
-    <Compile Include="UserModel.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\css\bootstrap-theme.css.map" />

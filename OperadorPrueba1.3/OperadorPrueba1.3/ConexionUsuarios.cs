@@ -44,4 +44,17 @@ namespace OperadorPrueba1._3
             }
         }
     }
+    public abstract class conectionLogin
+    {
+        private readonly string ConexionUsuarios;
+        public conectionLogin()
+        {
+            ConexionUsuarios = "Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;";
+        }
+        protected MySqlConnection GetConnection()
+        {
+            return new MySqlConnection(ConexionUsuarios);
+
+        }
+    }
 }

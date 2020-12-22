@@ -43,6 +43,8 @@
                   <div><br /></div>
                   <div><font color="yellow">Contraseña<br /></font><asp:TextBox ID="txtpassword" Style="text-transform: uppercase" runat="server" Width="247px" TabIndex="2" TextMode="Password" OnTextChanged="txtpassword_TextChanged"></asp:TextBox>
                       <br />
+                      <asp:Label ID="lblNotificaciones" runat="server" ForeColor="White"></asp:Label>
+                      <br />
                  </div>
                   <div><br /><br /></div>
                   <div><asp:Button ID="Entrar" runat="server" Text="Iniciar Sesión" Width="132px" OnClick="Entrar_Click" TabIndex="3" BackColor="#6B1F08" BorderColor="#DBB535" BorderStyle="Solid" ForeColor="White" CssClass="auto-style4"  /></div>
