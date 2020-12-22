@@ -7,7 +7,6 @@ namespace OperadorPrueba1._3
     {
         //Control de usuarios
         int Tipo_usuario;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             //Control de usuarios
@@ -49,10 +48,20 @@ namespace OperadorPrueba1._3
                     }
             }
         }
-
         protected void btn_asignarTareas_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Sorteador.aspx");
+        }
+        protected void CerrarSesion_Click(object sender, EventArgs e)
+        {
+            //Cerramos y cerramos sesion
+            Response.Redirect("Login.aspx");
+            //Aqui se reinicia la sesion XD
+            Secc ss = new Secc();
+        }
+        protected void btn_Checar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Checador.aspx");
         }
     }
 }

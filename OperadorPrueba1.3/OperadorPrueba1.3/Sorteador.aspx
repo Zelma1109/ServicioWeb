@@ -52,7 +52,9 @@
          &nbsp;&nbsp;&nbsp;&nbsp;<a id="logo-header" href="#"><h1 class ="site-names"><font color="yellow">
            <asp:Label ID="lbl_usuarios" runat="server" Text=""></asp:Label></h1></a>
         <nav>
-            <ul><li><a><font color="yellow">Cerrar Sesion</font></a></li></ul>
+            <ul><li><a><font color="yellow">
+                                <asp:Button ID="CerrarSesion" runat="server" Text="Cerrar Sesion" Height="62px" Width="95px" BackColor="#24292E" BorderColor="#24292E" BorderStyle="None" OnClick="CerrarSesion_Click"></asp:Button>
+                       </font></a></li></ul>
         </nav>
     </header>
 <!--__________________________________________________developing_____________________________________________-->
