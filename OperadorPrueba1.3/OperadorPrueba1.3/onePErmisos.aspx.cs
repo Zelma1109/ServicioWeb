@@ -58,16 +58,16 @@ namespace OperadorPrueba1._3
         {
             Response.Redirect("Sorteador.aspx");
         }
-        protected void CerrarSesion_Click(object sender, EventArgs e)
+        protected void btn_Checar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Checador.aspx");
+        }
+        protected void salir_Click(object sender, EventArgs e)
         {
             //Cerramos y cerramos sesion
             Response.Redirect("Login.aspx");
             //Aqui se reinicia la sesion XD
             Secc ss = new Secc();
-        }
-        protected void btn_Checar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Checador.aspx");
         }
     }
 }

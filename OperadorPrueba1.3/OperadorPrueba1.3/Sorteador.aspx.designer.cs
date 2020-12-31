@@ -24,22 +24,13 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lbl_usuarios.
+        /// Control salir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_usuarios;
-
-        /// <summary>
-        /// Control CerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CerrarSesion;
+        protected global::System.Web.UI.WebControls.Button salir;
 
         /// <summary>
         /// Control line.
@@ -114,6 +105,15 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.Button Cancelar;
 
         /// <summary>
+        /// Control Historial_D_usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Historial_D_usuario;
+
+        /// <summary>
         /// Control Historial_Total.
         /// </summary>
         /// <remarks>
@@ -121,5 +121,14 @@ namespace OperadorPrueba1._3
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView Historial_Total;
+
+        /// <summary>
+        /// Control lbl_Usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Usuario;
     }
 }

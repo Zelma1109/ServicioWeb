@@ -50,14 +50,18 @@
 <body style="height: 719px">
     <form id="form1" runat="server">
 <!--____________________________________________________ Header______________________________________________-->
-     <header id="main-headerXD" class="auto-style1">
-         <a id="logo-header" href="#"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario</font></h1></a>
-         &nbsp;&nbsp;&nbsp;&nbsp;<a id="logo-header" href="#"><h1 class ="site-names" style="width: 287px; height: 3px"><font color="yellow" size="2">
-           <asp:Label ID="lbl_usuarios" runat="server" Text=""></asp:Label></h1></a>
+    <header id="main-headerXD" class="auto-style1">
+        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario&nbsp;&nbsp;&nbsp;</font></h1></a>
+         &nbsp;&nbsp;&nbsp;&nbsp;
         <nav>
-            <ul><li><a class="auto-style2"><font color="yellow">
-                <asp:Button ID="CerrarSesion" runat="server" Text="Cerrar Sesion" Height="62px" Width="95px" BackColor="#24292E" BorderColor="#24292E" BorderStyle="None" OnClick="CerrarSesion_Click"></asp:Button>
-                      </font></a></li></ul>
+            <ul><font color="yellow">
+                <a id="logo-header" href="#" class="auto-style8">
+                    <h1 class ="site-name">
+                        <asp:Button ID="salir" runat="server" Text="Cerrar sesión" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow"  Width="129px" BorderStyle="None" OnClick="salir_Click"></asp:Button>
+                    </h1>
+                </a>
+                </font>
+          </ul>
         </nav>
     </header>
 <!--____________________________________________________ Developer______________________________________________-->
@@ -72,7 +76,11 @@
     </section>
 <!--__________________________________________________Footer_________________________________________________-->
    <footer id="main-footer">
-        <p><font color="yellow">&copy;Guantes Industriales Wario</font></p>
+        <p><font color="yellow">&copy;Guantes Industriales Wario
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+            <asp:Label ID="lbl_Usuario" runat="server" Font-Size="X-Small" ></asp:Label></font></p>           
     </footer> 
 <!--_________________________________________________________________________________________________________-->
         

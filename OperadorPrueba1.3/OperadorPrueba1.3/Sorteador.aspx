@@ -34,136 +34,212 @@
           text-align: center;
         }
 
-        #heading { color: rgb(255,202,24);}
-        .auto-style2 {
-            width: 28%;
-            height: 80px;
+#heading { color: rgb(255,202,24);}
+       
+#content {
+  text-align: left;
+  vertical-align: top;
+}
+
+#search {
+  display: inline-block;
+  width: 300px;
+  height: 550px;
+  margin: 10px auto;
+  overflow: hidden;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+
+#results {
+  display: inline-block;
+  width: 730px;
+  height: 550px;
+  margin: 10px auto;
+  overflow: auto;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+
+#Historial {
+  display: inline-block;
+  width: 100%;
+  height: 550px;
+  margin: 10px auto;
+  overflow: hidden;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+        .auto-style6 {
+            width: 354px;
+            margin-left: 0px;
         }
-        .auto-style3 {
-            width: 128px;
+        .auto-style7 {         
+            width:348px;
+        }
+        .auto-style8 {
+            height: 84px;
         }
     </style>
 </head>
+
 <body style="height: 719px">
     <form id="form1" runat="server">
 <!--____________________________________________________ Header______________________________________________-->
      <header id="main-headerXD" class="auto-style1">
-        <a id="logo-header" href="#"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario</font></h1></a>
-         &nbsp;&nbsp;&nbsp;&nbsp;<a id="logo-header" href="#"><h1 class ="site-names" style="width: 287px; height: 3px"><font color="yellow" size="2">
-           <asp:Label ID="lbl_usuarios" runat="server" Text=""></asp:Label></h1></a>
+        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario&nbsp;&nbsp;&nbsp;</font></h1></a>
+         &nbsp;&nbsp;&nbsp;&nbsp;
         <nav>
-            <ul><li><a><font color="yellow">
-                                <asp:Button ID="CerrarSesion" runat="server" Text="Cerrar Sesion" Height="62px" Width="95px" BackColor="#24292E" BorderColor="#24292E" BorderStyle="None" OnClick="CerrarSesion_Click"></asp:Button>
-                       </font></a></li></ul>
+            <ul><font color="yellow">
+                <a id="logo-header" href="#" class="auto-style8">
+                    <h1 class ="site-name">
+                        <asp:Button ID="salir" runat="server" Text="Cerrar sesión" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow" OnClick="salir_Click" Width="129px" BorderStyle="None"></asp:Button>
+                    </h1>
+                </a>
+                </font>
+          </ul>
         </nav>
     </header>
+        <div></div>
 <!--__________________________________________________developing_____________________________________________-->
-    <section>
-        <div class="content">
+    <div>
+        <section>
+            <div class="content">
+
               <!-- Nav tabs -->
               <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><font color="black">ASIGNACION DE TAREAS</font></a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><font color="black">HISTORIAL
-
-                                                                                                                    </font></a></li>
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><font color="black">TAREAS DE EMPLEADOS</font></a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><font color="black">HISTORIAL TALLER</font></a></li>             
               </ul>
+            
+            <!-- Tab panes -->
+           <div class="tab-content">
+ <!-------------------------------------------------------------------------------------------------------------------------------->
+                    <!-- A QUI IRA LO DE LA ASIGNACION DE LAS TARERAS-->
+                    <div role="tabpanel" class="tab-pane active" id="home"><br />
+                    <!--_________________________________________________________________________________________________________-->
+                           <div id="content">
+ <!--___________________________________________________________________________________________________________________________________________-->
+                                <div id="search" class="auto-style6">
 
-              <!-- Tab panes -->
-              <div class="tab-content">
+                                    <!-- ......................................................................................... -->
+                                                <div>
+                                                    <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Linea :</font><br />
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="line" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="249px" TabIndex="1" OnSelectedIndexChanged="line_SelectedIndexChanged"></asp:DropDownList>
+                                                </div>
+                                    <!-- ......................... -->
+                                                <div>
+                                                     <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Producto :</font><br />
+                                                     &nbsp;&nbsp;&nbsp;
+                                                     <asp:DropDownList ID="Producto" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="249px" TabIndex="2" OnSelectedIndexChanged="Producto_SelectedIndexChanged"></asp:DropDownList>
+                                                </div>
+                                    <!-- ......................... -->
+                                                <div>
+                                                     <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Modelo : </font><br />
+                                                     &nbsp;&nbsp;&nbsp;<asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="24px" Width="162px" AutoPostBack="True" TabIndex="3" OnSelectedIndexChanged="Modelos_SelectedIndexChanged1"></asp:DropDownList>
+                                                     &nbsp;
+                                                     <asp:TextBox ID="unidad" runat="server" AutoPostBack="True" ForeColor="Black"  Width="80px" OnTextChanged="unidad_TextChanged"></asp:TextBox>
+                                                </div>
+                                    <!-- ......................... -->
+                                                <div>
+                                                     <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Procesos:</font><br />
+                                                     &nbsp;&nbsp;&nbsp;<asp:CheckBoxList ID="Processos" runat="server" BorderColor="#CCCCCC" BorderStyle="Solid" RepeatLayout="Flow" ForeColor="Black" CssClass="DefaultCheckBoxList" TabIndex="4" Width="247px"></asp:CheckBoxList>
+                                                     <br />
+                                                </div>
+                                    <!-- ......................... -->
+                                                 <div>
+                                                     <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Cantidad :</font><br />
+                                                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="txt_c" runat="server" Type="number" min="1" MaxLength="1000"  TabIndex="5" Height="26px" Width="243px" ForeColor="Black"></asp:TextBox>
+                                                </div>
+                                    <!-- ......................... -->
+                                    
+                                                <div><br />
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <asp:Button ID="Asignar" runat="server" Text="Asignar" ForeColor="Black" Width="90px" TabIndex="6" OnClick="Asignar_Click1" />
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <asp:Button ID="Cancelar" runat="server" Text="Cancelar" ForeColor="Black" Width="90px" TabIndex="7" OnClick="Cancelar_Click"/>
+                                                </div>
+                                    <!-- ......................................................................................... -->
+                                </div>
+ <!--____________________________________________________________________________________________________________________________________________-->
 
-                 <div role="tabpanel" class="tab-pane active" id="home">
-                            <!-- A QUI IRA LO DE LA ASIGNACION DE LAS TARERAS-->
-                   
-                     <br /><br />
-                    <div>
-                    <br /><font color="black">Linea :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                        <asp:DropDownList ID="line" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="249px" TabIndex="1">
-                        </asp:DropDownList>
+                                <div id="results" class="auto-style7">
+                                    <br />
+                                    <!-- ......................................................................................... -->       
+                                             <div class="container">
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                     <div style="width:100%; height:100%; overflow:auto;">
+                                                             <asp:GridView ID="Historial_D_usuario" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
+                                                                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                                                 <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                                                 <RowStyle BackColor="White" ForeColor="#330099" />
+                                                                 <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                                                 <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                                                 <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                                                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                                                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                                       </asp:GridView>
+                                                    </div>
+                                                 </div>
+                                               </div>
+                                             </div>
+                                    <!-- ......................................................................................... -->                        
+                                </div>
+ <!--____________________________________________________________________________________________________________________________________________-->
+                          </div>
+                    <!--_________________________________________________________________________________________________________-->
                     </div>
-
-                     <div>
-                    <br /><font color="black"> Producto :&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="yellow"><br />
-                         <asp:DropDownList ID="Producto" runat="server" AutoPostBack="True" ForeColor="Black"  Height="27px" Width="245px" OnSelectedIndexChanged="Producto_SelectedIndexChanged" TabIndex="2">
-                         </asp:DropDownList>
-                         </font>
-                         </div>
-
-                     <div>
-                    <br /><font color="black"> Modelo :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </font><br /><font color="yellow">
-                         <asp:DropDownList ID="Modelos" runat="server" CssClass="offset-sm-0" ForeColor="Black"  Height="26px" Width="154px" AutoPostBack="True" OnSelectedIndexChanged="Modelos_SelectedIndexChanged" TabIndex="3">
-                         </asp:DropDownList>
-                         </font>&nbsp;
-                         <asp:TextBox ID="unidad" runat="server" AutoPostBack="True" ForeColor="Black" OnTextChanged="unidad_TextChanged" Width="80px"></asp:TextBox>
-                         </div>
                      
-
-                     <div>
-                         <br /><font color="black"> Procesos:&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                         <asp:CheckBoxList ID="Processos" runat="server" BorderColor="#CCCCCC" BorderStyle="Solid" RepeatLayout="Flow" ForeColor="Black" CssClass="DefaultCheckBoxList" TabIndex="4" Width="247px" OnSelectedIndexChanged="Processos_SelectedIndexChanged">
-                         </asp:CheckBoxList>
-                         <br />
-                    </div>
-
-
-                     <div>
-                         <br /><font color="black">Cantidad :&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
-                         <asp:TextBox ID="txt_c" runat="server" Type="number" min="1" MaxLength="1000"  TabIndex="5" Height="26px" Width="243px" ForeColor="Black"></asp:TextBox>
-                         <br />
-                    </div>
-
-                     <div>
-                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                         <table class="auto-style2">
-                             <tr>
-                                 <td class="auto-style3">
-                                        <font color="yellow">
-                                        <asp:Button ID="Asignar" runat="server" Text="Asignar" ForeColor="Black" Width="101px" OnClick="asignar_Click" TabIndex="6" />
-                                 </td>
-                                 <td>
-                                        <asp:Button ID="Cancelar" runat="server" Text="Cancelar" ForeColor="Black" OnClick="Cancelar_Click" />
-                                 </td>
-                             </tr>
-                         </table>
-                      <div>
-                    </div>
-                  <br />
-               </div>
-
-              <!----------------------------------------------------------------------------->
-                 </div>
-                 <div role="tabpanel" class="tab-pane" id="profile">
-                            <!-- A QUI IRA LO DEl CHECADOR DE LAS TARERAS-->
-                      <div >
-                          <br />
-                     </div>
-                      <div >
-                      </div>
-             <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                     <div style="width:100%; height:100%; overflow:auto;">
-                             <asp:GridView ID="Historial_Total" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
-                                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                                 <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                                 <RowStyle BackColor="White" ForeColor="#330099" />
-                                 <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                                 <SortedAscendingCellStyle BackColor="#FEFCEB" />
-                                 <SortedAscendingHeaderStyle BackColor="#AF0101" />
-                                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
-                                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
-                             </asp:GridView>
-                         </div>
+ <!-------------------------------------------------------------------------------------------------------------------------------->
+                     <!-- A QUI IRA LO DEl HISTORIAL TOTAL DE LAS TARERAS-->
+                     <div role="tabpanel" class="tab-pane" id="profile"><br /><br />
+                    <!--_________________________________________________________________________________________________________-->
+                        <div id="content">
+                                <div id="Historial" class="auto-style6">
+                                    <br />
+                                     <div class="container">
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                     <div style="width:100%; height:100%; overflow:auto;">
+                                                             <asp:GridView ID="Historial_Total" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
+                                                                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                                                 <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                                                 <RowStyle BackColor="White" ForeColor="#330099" />
+                                                                 <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                                                 <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                                                 <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                                                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                                                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                                             </asp:GridView>
+                                                      </div>
+                                                   </div>
+                                               </div>
+                                      </div>
+                                </div>
                         </div>
-                       </div>
-                     </div>
-              </div>
-         </div>
-     </section>
+                    <!--_________________________________________________________________________________________________________-->
+                     </div>                   
+<!---------------------------------------------------------------------------------------------------------------------------------->
+               <br />
+           </div>      
+      </section>
+</div>
 <!--__________________________________________________Footer_________________________________________________-->
    <footer id="main-footer">
-        <p><font color="yellow">&copy;Guantes Industriales Wario</font></p>
+        <p><font color="yellow">&copy;Guantes Industriales Wario
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+            <asp:Label ID="lbl_Usuario" runat="server" Font-Size="X-Small" ></asp:Label></font></p>           
     </footer> 
 <!--_________________________________________________________________________________________________________-->
         

@@ -33,13 +33,13 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.Label lbl_usuarios;
 
         /// <summary>
-        /// Control CerrarSesion.
+        /// Control salir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CerrarSesion;
+        protected global::System.Web.UI.WebControls.Button salir;
 
         /// <summary>
         /// Control btn_asignarTareas.

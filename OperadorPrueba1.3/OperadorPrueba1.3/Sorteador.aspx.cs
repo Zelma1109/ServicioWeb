@@ -20,7 +20,7 @@ namespace OperadorPrueba1._3
         protected void Page_Load(object sender, EventArgs e)
         {
             //MOSTRAR USUARIO QUE HA INGRESADO EN EL SISTEMA
-            lbl_usuarios.Text = Secc.usuario;
+            lbl_Usuario.Text = Secc.usuario;
 
             /////////////////////////////////////////////////
 
@@ -33,16 +33,16 @@ namespace OperadorPrueba1._3
                 Lineas();
                 ComenzarLLenado();
             }
-
             //bloquear campo de texto
             unidad.Enabled = false;
         }
         private void historial()
         {
             //Funciona plox----
-            Historial_Total.DataSource = consultar("Select fechaAsignacion as 'Asignacion:', emplinea as 'Linea'," +
-                                                    " producto as 'Producto', modelo as 'Modelo', unidad as 'Unidad'," +
-                                                    " procesos as 'Procesos', cantidad as 'Cantidad' from tareas_Asignadas;");
+            Historial_Total.DataSource = consultar("Select fechaAsignacion as 'Asignacion:', Asignador as 'Por:'," +
+                                                    " emplinea as 'Para:', producto as 'Producto', modelo as 'Modelo'," +
+                                                    "unidad as 'Unidad', procesos as 'Procesos', cantidad as 'Cantidad'" +
+                                                    " from tareas_Asignadas;");
             Historial_Total.DataBind();
         }
         public DataSet consultar(string strSQL)
@@ -84,51 +84,6 @@ namespace OperadorPrueba1._3
             //Processos.ClearSelection();
             //-----------------------------------------------------------------------------------
         }
-        protected void DropDown_Line_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-        protected void Modelos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Producto.AppendDataBoundItems == false)
-            {
-                //MEJJORA-----------------------Aqui Traemos la unidad para el apartado---------------------------                  
-                cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
-                
-                int idproducto = Convert.ToInt32(Producto.SelectedIndex);
-                MySqlCommand cmd = new MySqlCommand("SELECT fkidunidad, unidad FROM productos " +
-                                                    "INNER JOIN unidad ON" +
-                                                    " productos.fkidunidad = unidad.idunidad " +
-                                                    "where producto = " + idproducto +" and fkidmodelo = @Modelo",  cn);
-
-                //cmd.Parameters.AddWithValue("@ID", Producto.SelectedValue);
-                cmd.Parameters.AddWithValue("@Modelo", Modelos.SelectedValue);
-
-                cn.Open();
-
-                MySqlDataReader registro = cmd.ExecuteReader();
-                if (registro.Read())
-                {
-                    unidad.Text = registro["unidad"].ToString();
-                }
-
-                //--------------------------------------------------------------------------------------- 
-                
-                procesos();
-                //Processos.ClearSelection();
-            }
-        }
-        protected void Producto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int idproducto = Convert.ToInt32(Producto.SelectedIndex);
-            Modelos.DataSource = consultar("select fkidmodelo from productos where producto=" + idproducto);
-            Modelos.DataTextField = "fkidmodelo";
-            Modelos.DataValueField = "fkidmodelo";
-            Modelos.DataBind();
-            Modelos.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
-            Processos.DataBind();
-            Processos.ClearSelection();
-            //Processos.Items.Clear();
-        }
         public void AsignarTarea()
         { 
             //Guardado datos seleccionados en el checkbox
@@ -150,9 +105,9 @@ namespace OperadorPrueba1._3
 
             cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
 
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO tareas_Asignadas(emplinea, producto, modelo," +
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO tareas_Asignadas(Asignador, emplinea, producto, modelo," +
                                                 " unidad, procesos, cantidad)" +
-                                                 "Values('" + line.Text + "','" + Producto.Text + "','" + Modelos.Text + "','" 
+                                                 "Values('" + lbl_Usuario.Text+ "','" + line.Text + "','" + Producto.Text + "','" + Modelos.Text + "','" 
                                                  + unidad.Text + "','" + cbx + "','" + txt_c.Text +"')", cn);
 
             cn.Open();
@@ -162,21 +117,6 @@ namespace OperadorPrueba1._3
 
             limpiarycargar();
             historial();
-        }
-        protected void asignar_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(line.Text) && !string.IsNullOrEmpty(Producto.Text) &&
-                           !string.IsNullOrEmpty(Modelos.Text) && !string.IsNullOrEmpty(Processos.Text) 
-                           && !string.IsNullOrEmpty(txt_c.Text) == true)
-            {
-                
-                AsignarTarea();
-            }
-            else
-            {
-                MessageBox.Show("FAVOR DE LLENAR LOS CAMPOS QUE SE ENCUENTRAN VACIOS", "CAMPOS VACIOS");
-                //Aqui no se limpian los campos ya que la validacion solo retiene los campos hasta llenarlos
-            }
         }
         public void limpiarycargar()
         {
@@ -189,36 +129,98 @@ namespace OperadorPrueba1._3
             Processos.Items.Clear();
             txt_c.Text = "";
 
+            //GridView No visible 
+            Historial_D_usuario.Visible = false;
+
+
             //Aqui volvemos a llenar
             Lineas();
             ComenzarLLenado();
         }
         protected void Cancelar_Click(object sender, EventArgs e)
         {
-            limpiarycargar();
+            limpiarycargar();     
         }
-        protected void Processos_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Modelos_SelectedIndexChanged1(object sender, EventArgs e)
         {
+            if (Producto.AppendDataBoundItems == false)
+            {
+                //MEJJORA-----------------------Aqui Traemos la unidad para el apartado---------------------------                  
+                cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
 
+                int idproducto = Convert.ToInt32(Producto.SelectedIndex);
+                MySqlCommand cmd = new MySqlCommand("SELECT fkidunidad, unidad FROM productos " +
+                                                    "INNER JOIN unidad ON" +
+                                                    " productos.fkidunidad = unidad.idunidad " +
+                                                    "where producto = " + idproducto + " and fkidmodelo = @Modelo", cn);
+
+                //cmd.Parameters.AddWithValue("@ID", Producto.SelectedValue);
+                cmd.Parameters.AddWithValue("@Modelo", Modelos.SelectedValue);
+
+                cn.Open();
+
+                MySqlDataReader registro = cmd.ExecuteReader();
+                if (registro.Read())
+                {
+                    unidad.Text = registro["unidad"].ToString();
+                }
+
+                //--------------------------------------------------------------------------------------- 
+
+                procesos();
+                //Processos.ClearSelection();
+            }
         }
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void Producto_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int idproducto = Convert.ToInt32(Producto.SelectedIndex);
+            Modelos.DataSource = consultar("select fkidmodelo from productos where producto=" + idproducto);
+            Modelos.DataTextField = "fkidmodelo";
+            Modelos.DataValueField = "fkidmodelo";
+            Modelos.DataBind();
+            Modelos.Items.Insert(0, new ListItem("--Seleccionar--", "0"));
+            Processos.DataBind();
+            Processos.ClearSelection();
+            //Processos.Items.Clear();
         }
         protected void unidad_TextChanged(object sender, EventArgs e)
         {
             unidad.Enabled = false;
         }
-        protected void Buscador_TextChanged(object sender, EventArgs e)
-        {
-      
-        }
-        protected void CerrarSesion_Click(object sender, EventArgs e)
+        protected void salir_Click(object sender, EventArgs e)
         {
             //Cerramos y cerramos sesion
             Response.Redirect("Login.aspx");
             //Aqui se reinicia la sesion XD
             Secc ss = new Secc();
         }
+        protected void Asignar_Click1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(line.Text) && !string.IsNullOrEmpty(Producto.Text) &&
+                           !string.IsNullOrEmpty(Modelos.Text) && !string.IsNullOrEmpty(Processos.Text)
+                           && !string.IsNullOrEmpty(txt_c.Text) == true)
+            {
+
+                AsignarTarea();
+            }
+            else
+            {
+                MessageBox.Show("FAVOR DE LLENAR LOS CAMPOS QUE SE ENCUENTRAN VACIOS", "CAMPOS VACIOS");
+                //Aqui no se limpian los campos ya que la validacion solo retiene los campos hasta llenarlos
+            }
+        }
+        protected void line_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Historial_D_usuario.Visible = true;
+            Historial_D_usuario.DataSource = consultar("select fechaAsignacion as 'Asignacion:', " +
+                                                        "Asignador as 'Por:', emplinea as 'Para:'," +
+                                                        " producto as 'Producto', modelo as 'Modelo'," +
+                                                        " unidad as 'Unidad', procesos as 'Procesos', " +
+                                                        "cantidad as 'Cantidad' from tareas_Asignadas" +
+                                                        " where emplinea = '" + line.Text + "'");
+            Historial_D_usuario.DataBind();
+        }
+
+        //------------------------------------------------------------------------------------
     }
 }
