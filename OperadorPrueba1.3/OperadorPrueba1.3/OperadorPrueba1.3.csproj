@@ -128,6 +128,7 @@
     <Content Include="img\1.jpg" />
     <Content Include="img\login.css" />
     <Content Include="img\war.jpg" />
+    <Content Include="Maquila.aspx" />
     <Content Include="onePErmisos.aspx" />
     <Content Include="Sorteador.aspx" />
     <Content Include="Web.config" />
@@ -143,6 +144,13 @@
     </Compile>
     <Compile Include="ConexionUsuarios.cs" />
     <Compile Include="control.cs" />
+    <Compile Include="Maquila.aspx.cs">
+      <DependentUpon>Maquila.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maquila.aspx.designer.cs">
+      <DependentUpon>Maquila.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo.cs" />
     <Compile Include="onePErmisos.aspx.cs">
       <DependentUpon>onePErmisos.aspx</DependentUpon>
