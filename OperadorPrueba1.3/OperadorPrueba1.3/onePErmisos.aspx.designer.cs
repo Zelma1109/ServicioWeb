@@ -51,6 +51,15 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.Button btn_asignarTareas;
 
         /// <summary>
+        /// Control btn_Maquill.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Maquill;
+
+        /// <summary>
         /// Control btn_Checar.
         /// </summary>
         /// <remarks>

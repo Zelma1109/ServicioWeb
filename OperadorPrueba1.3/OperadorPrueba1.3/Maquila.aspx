@@ -131,7 +131,7 @@
 
                                     <!-- ......................................................................................... -->
                                                 <div>
-                                                    <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Linea :</font><br />
+                                                    <br /><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Maquila :</font><br />
                                                     &nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="line" runat="server" AutoPostBack="True" ForeColor="Black" Height="27px" Width="249px" TabIndex="1" OnSelectedIndexChanged="line_SelectedIndexChanged"></asp:DropDownList>
                                                 </div>
                                     <!-- ......................... -->

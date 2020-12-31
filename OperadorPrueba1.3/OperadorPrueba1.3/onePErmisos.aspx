@@ -58,12 +58,18 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="btn_asignarTareas" runat="server" ForeColor="#FFDF1B" Height="147px" Text="ASIGNACION DE TAREAS" Width="388px" BackColor="#24292E" Font-Bold="True" OnClick="btn_asignarTareas_Click" />
+        <asp:Button ID="btn_asignarTareas" runat="server" ForeColor="#FFDF1B" Height="94px" Text="ASIGNACION A TALLER" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_asignarTareas_Click" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btn_Maquill" runat="server" ForeColor="#FFDF1B" Height="94px" Text="ASIGNACION A MAQUILAS" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_Maquill_Click" />
+        </font>
         <br />
         <br /> 
         <br />
-        <br />   
-        <asp:Button ID="btn_Checar" runat="server" ForeColor="#FFDF1B" Height="148px" Text="CHECADOR DE TAREAS" Width="386px" BackColor="#24292E" Font-Bold="True" OnClick="btn_Checar_Click" />
+        <br /> 
+        </div>
+        <!--......................................................................................................................................................................................................-->
+        <div align=center >
+        <asp:Button ID="btn_Checar" runat="server" ForeColor="#FFDF1B" Height="91px" Text="CHECADOR DE TAREAS" Width="340px" BackColor="#24292E" Font-Bold="True" OnClick="btn_Checar_Click" />
         <br />
         <br />
         <br />

@@ -24,6 +24,7 @@ namespace OperadorPrueba1._3
             if (Tipo_usuario == 1)
             {          
                 btn_asignarTareas.Visible = true;
+                btn_Maquill.Visible = true;
                 btn_Checar.Visible = true;
             }
             else
@@ -39,6 +40,7 @@ namespace OperadorPrueba1._3
                         if(Tipo_usuario == 3)
                         {
                             btn_asignarTareas.Visible = true;
+                            btn_asignarTareas.Visible = true;
                             btn_Checar.Visible = false;
                         }
                             else
@@ -47,6 +49,7 @@ namespace OperadorPrueba1._3
                                 if(Tipo_usuario == 4)
                                 {
 
+                                    btn_asignarTareas.Visible = false;
                                     btn_asignarTareas.Visible = false;
                                     btn_Checar.Visible = true;
                                 }
@@ -68,6 +71,10 @@ namespace OperadorPrueba1._3
             Response.Redirect("Login.aspx");
             //Aqui se reinicia la sesion XD
             Secc ss = new Secc();
+        }
+        protected void btn_Maquill_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Maquila.aspx");
         }
     }
 }
