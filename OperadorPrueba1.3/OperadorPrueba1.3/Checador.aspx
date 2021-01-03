@@ -65,15 +65,83 @@
         </nav>
     </header>
 <!--____________________________________________________ Developer______________________________________________-->
-            
-    <section>
-        <div class="center-block">
-        <h3><font color="black">CHECADOR DE TAREAS</font></h3>
-        </div>
-    </section>
-    <section>
+         <div>
+        <section>
+            <div class="content">
 
-    </section>
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><font color="black">STATUS TALLER</font></a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><font color="black">STATUS MAQUILA</font></a></li>             
+              </ul>
+            
+            <!-- Tab panes -->
+           <div class="tab-content">
+ <!-------------------------------------------------------------------------------------------------------------------------------->
+                    <!-- A QUI IRA LO DE LA ASIGNACION DE LAS TARERAS-->
+                    <div role="tabpanel" class="tab-pane active" id="home"><br />
+                    <!--_________________________________________________________________________________________________________-->
+                           <div id="content">
+ <!--___________________________________________________________________________________________________________________________________________-->
+                                <div id="search" class="auto-style6">
+                                    <br />
+                                    <!-- ......................................................................................... -->       
+                                             <div class="container">
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                     <div style="width:100%; height:100%; overflow:auto;">
+                                                             <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
+                                                                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                                                 <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                                                 <RowStyle BackColor="White" ForeColor="#330099" />
+                                                                 <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                                                 <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                                                 <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                                                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                                                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                                       </asp:GridView>
+                                                    </div>
+                                                 </div>
+                                               </div>
+                                             </div>
+                                    <!-- ......................................................................................... -->                        
+                                </div>
+ <!--____________________________________________________________________________________________________________________________________________-->
+
+                                <div id="results" class="auto-style7">
+                                    <br />
+                                    <!-- ......................................................................................... -->       
+                                             <div class="container">
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                     <div style="width:100%; height:100%; overflow:auto;">
+                                                             <asp:GridView ID="Historial_D_usuario" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
+                                                                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                                                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                                                 <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                                                 <RowStyle BackColor="White" ForeColor="#330099" />
+                                                                 <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                                                 <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                                                 <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                                                 <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                                                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                                                       </asp:GridView>
+                                                    </div>
+                                                 </div>
+                                               </div>
+                                             </div>
+                                    <!-- ......................................................................................... -->                        
+                                </div>
+ <!--____________________________________________________________________________________________________________________________________________-->
+                          </div>
+                    <!--_________________________________________________________________________________________________________-->
+                    </div>
+                     
+ <!-------------------------------------------------------------------------------------------------------------------------------->
+                    
+            
+
 <!--__________________________________________________Footer_________________________________________________-->
    <footer id="main-footer">
         <p><font color="yellow">&copy;Guantes Industriales Wario

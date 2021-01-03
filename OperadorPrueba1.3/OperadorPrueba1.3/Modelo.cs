@@ -58,5 +58,28 @@ namespace OperadorPrueba1._3
             }
             return usr;
         }
+
+        public bool ExisteMaquila(string Maquila)
+        {
+            MySqlDataReader reader;
+            MySqlConnection conexion = ConexionUsuarios.getConexxion();
+            conexion.Open();
+
+            string sql = "Select idTerminado from Terminado_Maquila where Idtarea LIKE @Idtarea";
+
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@Idtarea", Maquila);
+
+            reader = comando.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

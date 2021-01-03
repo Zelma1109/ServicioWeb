@@ -63,7 +63,7 @@ namespace OperadorPrueba1._3
         }
         protected void btn_Checar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Checador.aspx");
+            Response.Redirect("ejercicio.aspx");
         }
         protected void salir_Click(object sender, EventArgs e)
         {

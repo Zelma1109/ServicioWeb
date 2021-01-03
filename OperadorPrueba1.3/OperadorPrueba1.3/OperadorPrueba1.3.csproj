@@ -125,6 +125,7 @@
     <Content Include="CSS\js\jquery.js" />
     <Content Include="CSS\js\npm.js" />
     <None Include="CSS\xx" />
+    <Content Include="ejercicio.aspx" />
     <Content Include="img\1.jpg" />
     <Content Include="img\login.css" />
     <Content Include="img\war.jpg" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="ConexionUsuarios.cs" />
     <Compile Include="control.cs" />
+    <Compile Include="ejercicio.aspx.cs">
+      <DependentUpon>ejercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ejercicio.aspx.designer.cs">
+      <DependentUpon>ejercicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Maquila.aspx.cs">
       <DependentUpon>Maquila.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -11,7 +11,7 @@ namespace OperadorPrueba1._3
 {
 
 
-    public partial class Checador
+    public partial class ejercicio
     {
 
         /// <summary>
@@ -24,39 +24,21 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control salir.
+        /// Control gvEmpInfo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button salir;
+        protected global::System.Web.UI.WebControls.GridView gvEmpInfo;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control gvMovedRows.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// Control Historial_D_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Historial_D_usuario;
-
-        /// <summary>
-        /// Control lbl_Usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Usuario;
+        protected global::System.Web.UI.WebControls.GridView gvMovedRows;
     }
 }
