@@ -20,10 +20,12 @@ namespace OperadorPrueba1._3
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 BindGridview();
             }
+
         }
         public ejercicio()
         {
@@ -123,7 +125,7 @@ namespace OperadorPrueba1._3
                     cn.Open();
                     cmd.ExecuteNonQuery();
                     cn.Close();
-                    //MessageBox.Show("TAREA FINALIZADA");
+                    
                 }
                 catch (Exception ex)
                 {
@@ -146,16 +148,16 @@ namespace OperadorPrueba1._3
                 cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
                 try
                 {
-                    //procedimiento  almacenado que permite guardar los registros evitando duplicaciones y redundancia de datos
-                    MySqlCommand cmd = new MySqlCommand("Finish2", cn);
+                     
+                            //procedimiento  almacenado que permite guardar los registros evitando duplicaciones y redundancia de datos
+                            MySqlCommand cmd = new MySqlCommand("Finish2", cn);
 
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("p_Idtarea", gvRow.Cells[1].Text.ToString());
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("p_Idtarea", gvRow.Cells[1].Text.ToString());
 
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                    //MessageBox.Show("TAREA FINALIZADA");
+                            cn.Open();
+                            cmd.ExecuteNonQuery();
+                            cn.Close();
                 }
                 catch (Exception ex)
                 {
