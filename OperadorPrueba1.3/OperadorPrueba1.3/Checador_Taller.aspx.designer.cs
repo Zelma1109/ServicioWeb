@@ -33,22 +33,22 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.Button salir;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control gvEmpInfo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gvEmpInfo;
 
         /// <summary>
-        /// Control Historial_D_usuario.
+        /// Control gvMovedRows.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Historial_D_usuario;
+        protected global::System.Web.UI.WebControls.GridView gvMovedRows;
 
         /// <summary>
         /// Control lbl_Usuario.
