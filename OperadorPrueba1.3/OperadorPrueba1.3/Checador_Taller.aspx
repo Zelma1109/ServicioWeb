@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Checador.aspx.cs" Inherits="OperadorPrueba1._3.Checador" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Checador_Taller.aspx.cs" Inherits="OperadorPrueba1._3.Checador" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -45,6 +45,46 @@
         .auto-style4 {
             width: 212px;
         }
+
+        #content {
+  text-align: left;
+  vertical-align: top;
+}
+
+#search {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  margin: 10px auto;
+  overflow: auto;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+
+#results {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  margin: 10px auto;
+  overflow: auto;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+        .auto-style6 {
+            width: 354px;
+            margin-left: 0px;
+        }
+        .auto-style7 {         
+            width:348px;
+        }
+        .auto-style8 {
+            height: 84px;
+        }
+
     </style>
 </head>
 <body style="height: 719px">
@@ -57,7 +97,7 @@
             <ul><font color="yellow">
                 <a id="logo-header" href="#" class="auto-style8">
                     <h1 class ="site-name">
-                        <asp:Button ID="salir" runat="server" Text="Cerrar sesión" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow"  Width="129px" BorderStyle="None" OnClick="salir_Click"></asp:Button>
+                        <asp:Button ID="salir" runat="server" Text="Cerrar sesión" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow"  Width="129px" BorderStyle="None" OnClick="salir_Click1"></asp:Button>
                     </h1>
                 </a>
                 </font>
@@ -67,25 +107,11 @@
 <!--____________________________________________________ Developer______________________________________________-->
          <div>
         <section>
-            <div class="content">
-
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><font color="black">STATUS TALLER</font></a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><font color="black">STATUS MAQUILA</font></a></li>             
-              </ul>
-            
-            <!-- Tab panes -->
-           <div class="tab-content">
- <!-------------------------------------------------------------------------------------------------------------------------------->
-                    <!-- A QUI IRA LO DE LA ASIGNACION DE LAS TARERAS-->
-                    <div role="tabpanel" class="tab-pane active" id="home"><br />
-                    <!--_________________________________________________________________________________________________________-->
-                           <div id="content">
- <!--___________________________________________________________________________________________________________________________________________-->
+                     <div id="content">
+ <!--___________________________________________________________________________________________________________-->
                                 <div id="search" class="auto-style6">
                                     <br />
-                                    <!-- ......................................................................................... -->       
+                   <!--........................................................................................ -->       
                                              <div class="container">
                                                 <div class="row">
                                                   <div class="col-md-12">
@@ -105,13 +131,13 @@
                                                  </div>
                                                </div>
                                              </div>
-                                    <!-- ......................................................................................... -->                        
+                <!-- ......................................................................................... -->                        
                                 </div>
- <!--____________________________________________________________________________________________________________________________________________-->
+ <!--__________________________________________________________________________________________________________-->
 
                                 <div id="results" class="auto-style7">
                                     <br />
-                                    <!-- ......................................................................................... -->       
+                 <!-- ......................................................................................... -->       
                                              <div class="container">
                                                 <div class="row">
                                                   <div class="col-md-12">
@@ -131,16 +157,12 @@
                                                  </div>
                                                </div>
                                              </div>
-                                    <!-- ......................................................................................... -->                        
+                  <!-- ......................................................................................... -->                        
                                 </div>
- <!--____________________________________________________________________________________________________________________________________________-->
+ <!--____________________________________________________________________________________________________________-->
                           </div>
-                    <!--_________________________________________________________________________________________________________-->
+ <!--_____________________________________________________________________________________________________________-->
                     </div>
-                     
- <!-------------------------------------------------------------------------------------------------------------------------------->
-                    
-            
 
 <!--__________________________________________________Footer_________________________________________________-->
    <footer id="main-footer">

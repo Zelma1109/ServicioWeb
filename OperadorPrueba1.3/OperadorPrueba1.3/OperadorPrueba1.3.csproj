@@ -112,7 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Checador.aspx" />
+    <Content Include="Checador_Taller.aspx" />
     <Content Include="CSS\css\bootstrap-theme.css" />
     <Content Include="CSS\css\bootstrap-theme.min.css" />
     <Content Include="CSS\css\bootstrap.css" />
@@ -125,7 +125,7 @@
     <Content Include="CSS\js\jquery.js" />
     <Content Include="CSS\js\npm.js" />
     <None Include="CSS\xx" />
-    <Content Include="ejercicio.aspx" />
+    <Content Include="Checador_Maquila.aspx" />
     <Content Include="img\1.jpg" />
     <Content Include="img\login.css" />
     <Content Include="img\war.jpg" />
@@ -136,21 +136,21 @@
     <Content Include="login.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checador.aspx.cs">
-      <DependentUpon>Checador.aspx</DependentUpon>
+    <Compile Include="Checador_Taller.aspx.cs">
+      <DependentUpon>Checador_Taller.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Checador.aspx.designer.cs">
-      <DependentUpon>Checador.aspx</DependentUpon>
+    <Compile Include="Checador_Taller.aspx.designer.cs">
+      <DependentUpon>Checador_Taller.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConexionUsuarios.cs" />
     <Compile Include="control.cs" />
-    <Compile Include="ejercicio.aspx.cs">
-      <DependentUpon>ejercicio.aspx</DependentUpon>
+    <Compile Include="Checador_Maquila.aspx.cs">
+      <DependentUpon>Checador_Maquila.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ejercicio.aspx.designer.cs">
-      <DependentUpon>ejercicio.aspx</DependentUpon>
+    <Compile Include="Checador_Maquila.aspx.designer.cs">
+      <DependentUpon>Checador_Maquila.aspx</DependentUpon>
     </Compile>
     <Compile Include="Maquila.aspx.cs">
       <DependentUpon>Maquila.aspx</DependentUpon>

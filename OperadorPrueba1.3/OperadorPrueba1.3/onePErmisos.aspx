@@ -21,7 +21,8 @@
             left: 0;
             top: 1;
             height: 34px;
-        }      
+        }
+        
         .footers {
           position: fixed;
           left: 0;
@@ -31,8 +32,59 @@
           color: white;
           text-align: center;
         }
+
         #heading { color: rgb(255,202,24);}
-        </style>
+        H3{text-align: center}
+        .auto-style2 {
+            width: 116px;
+        }
+        .auto-style3 {
+            width: 138px;
+        }
+        .auto-style4 {
+            width: 212px;
+        }
+
+        #content {
+  text-align: left;
+  vertical-align: top;
+}
+
+#search {
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  margin: 10px auto;
+  overflow: auto;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+
+#results {
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  margin: 10px auto;
+  overflow: auto;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+        .auto-style6 {
+            width: 354px;
+            margin-left: 0px;
+        }
+        .auto-style7 {         
+            width:348px;
+        }
+        .auto-style8 {
+            height: 84px;
+        }
+
+    </style>
 </head>
 <body style="height: 719px">
     <form id="form1" runat="server">
@@ -48,33 +100,53 @@
                         <asp:Button ID="salir" runat="server" Text="Cerrar sesión" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow" Width="129px" BorderStyle="None" OnClick="salir_Click"></asp:Button>
                     </h1>
                 </a>
-                </font>
+            </font>
           </ul>
         </nav>
     </header>
 <!--__________________________________________________developing_____________________________________________-->
-    <div align=center >
-        <br />
-        <br />
-        <br />
-        <br />
-        <asp:Button ID="btn_asignarTareas" runat="server" ForeColor="#FFDF1B" Height="94px" Text="ASIGNACION A TALLER" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_asignarTareas_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btn_Maquill" runat="server" ForeColor="#FFDF1B" Height="94px" Text="ASIGNACION A MAQUILAS" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_Maquill_Click" />
-        </font>
-        <br />
-        <br /> 
-        <br />
-        <br /> 
-        </div>
+      <div>
+        <section>
+            <div id="content">
+ <!--___________________________________________________________________________________________________________-->
+               <div id="search" class="auto-style6">                                                            
+                 <div>  
+                    <div align=center >
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <asp:Button ID="btn_asignarTaller" runat="server" ForeColor="#FFDF1B" Height="94px" Text="ASIGNAR AL TALLER" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_asignarTaller_Click" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btn_ChecarTaller" runat="server" ForeColor="#FFDF1B" Height="94px" Text="CHECADOR DEL TALLER" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_ChecarTaller_Click" />
+                        </font>
+                        <br />
+                        <br /> 
+                        <br />
+                        <br /> 
+                    </div>
+                </div>
+              </div>
+            </div>
         <!--......................................................................................................................................................................................................-->
-        <div align=center >
-        <asp:Button ID="btn_Checar" runat="server" ForeColor="#FFDF1B" Height="91px" Text="CHECADOR DE TAREAS" Width="340px" BackColor="#24292E" Font-Bold="True" OnClick="btn_Checar_Click" />
-        <br />
-        <br />
-        <br />
-        <br />
-    </div>
+                  <div id="results" class="auto-style7">
+                             <div> 
+                                 <div align=center >
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <asp:Button ID="btn_AsignarMaquila" runat="server" ForeColor="#FFDF1B" Height="94px" Text="ASIGNAR A MAQUILAS" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_AsignarMaquila_Click" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:Button ID="btn_checadorMaquila" runat="server" ForeColor="#FFDF1B" Height="94px" Text="CHECADOR DE MAQUILAS" Width="338px" BackColor="#24292E" Font-Bold="True" OnClick="btn_checadorMaquila_Click" />
+                                    </font>
+                                    <br />
+                                    <br /> 
+                                    <br />
+                                    <br /> 
+                                </div>
+                            </div>
+                  </div>
 <!--___________________________________________________Footer_________________________________________________-->
    <footer id="main-footer">
         <p><font color="yellow">&copy;Guantes Industriales Wario</font></p>
@@ -85,7 +157,9 @@
 		<script src="CSS/js/xxa.js"></script>
 		<script src="CSS/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+            </section>
+          </div>
 	</form>
 	</body>
 </html>

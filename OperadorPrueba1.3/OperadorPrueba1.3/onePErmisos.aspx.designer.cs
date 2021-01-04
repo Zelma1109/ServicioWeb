@@ -42,30 +42,39 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.Button salir;
 
         /// <summary>
-        /// Control btn_asignarTareas.
+        /// Control btn_asignarTaller.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_asignarTareas;
+        protected global::System.Web.UI.WebControls.Button btn_asignarTaller;
 
         /// <summary>
-        /// Control btn_Maquill.
+        /// Control btn_ChecarTaller.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Maquill;
+        protected global::System.Web.UI.WebControls.Button btn_ChecarTaller;
 
         /// <summary>
-        /// Control btn_Checar.
+        /// Control btn_AsignarMaquila.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Checar;
+        protected global::System.Web.UI.WebControls.Button btn_AsignarMaquila;
+
+        /// <summary>
+        /// Control btn_checadorMaquila.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_checadorMaquila;
     }
 }

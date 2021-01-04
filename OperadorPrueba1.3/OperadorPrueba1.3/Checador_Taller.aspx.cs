@@ -16,7 +16,8 @@ namespace OperadorPrueba1._3
 
             /////////////////////////////////////////////////
         }
-        protected void salir_Click(object sender, EventArgs e)
+
+        protected void salir_Click1(object sender, EventArgs e)
         {
             //Cerramos y cerramos sesion
             Response.Redirect("Login.aspx");

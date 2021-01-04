@@ -169,6 +169,13 @@ namespace OperadorPrueba1._3
             }
             return dt;           
         }
+        protected void salir_Click(object sender, EventArgs e)
+        {
+            //Cerramos y cerramos sesion
+            Response.Redirect("Login.aspx");
+            //Aqui se reinicia la sesion XD
+            Secc ss = new Secc();
+        }
     }
 }
 

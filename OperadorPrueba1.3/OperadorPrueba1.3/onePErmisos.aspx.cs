@@ -23,9 +23,10 @@ namespace OperadorPrueba1._3
             //////////////ADMINISTRADOR////
             if (Tipo_usuario == 1)
             {          
-                btn_asignarTareas.Visible = true;
-                btn_Maquill.Visible = true;
-                btn_Checar.Visible = true;
+                btn_asignarTaller.Visible = true;
+                btn_AsignarMaquila.Visible = true;
+                btn_ChecarTaller.Visible = true;
+                btn_checadorMaquila.Visible = true;
             }
             else
             {
@@ -39,9 +40,10 @@ namespace OperadorPrueba1._3
                         ///////////////////////////////SORTEADOR////
                         if(Tipo_usuario == 3)
                         {
-                            btn_asignarTareas.Visible = true;
-                            btn_asignarTareas.Visible = true;
-                            btn_Checar.Visible = false;
+                            btn_asignarTaller.Visible = true;
+                            btn_AsignarMaquila.Visible = true;
+                            btn_ChecarTaller.Visible = false;
+                            btn_checadorMaquila.Visible = false;
                         }
                             else
                             {
@@ -49,21 +51,14 @@ namespace OperadorPrueba1._3
                                 if(Tipo_usuario == 4)
                                 {
 
-                                    btn_asignarTareas.Visible = false;
-                                    btn_asignarTareas.Visible = false;
-                                    btn_Checar.Visible = true;
+                                    btn_asignarTaller.Visible = false;
+                                    btn_AsignarMaquila.Visible = false;
+                                    btn_ChecarTaller.Visible = true;
+                                    btn_checadorMaquila.Visible = true;
                                 }
                             }
                     }
             }
-        }
-        protected void btn_asignarTareas_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Sorteador.aspx");
-        }
-        protected void btn_Checar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ejercicio.aspx");
         }
         protected void salir_Click(object sender, EventArgs e)
         {
@@ -72,9 +67,21 @@ namespace OperadorPrueba1._3
             //Aqui se reinicia la sesion XD
             Secc ss = new Secc();
         }
-        protected void btn_Maquill_Click(object sender, EventArgs e)
+        protected void btn_AsignarMaquila_Click(object sender, EventArgs e)
         {
             Response.Redirect("Maquila.aspx");
+        }
+        protected void btn_ChecarTaller_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Checador_Taller.aspx");
+        }
+        protected void btn_asignarTaller_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Sorteador.aspx");
+        }
+        protected void btn_checadorMaquila_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Checador_Maquila.aspx");
         }
     }
 }
