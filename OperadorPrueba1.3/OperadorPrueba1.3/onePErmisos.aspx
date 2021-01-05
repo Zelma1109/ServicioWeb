@@ -90,7 +90,7 @@
     <form id="form1" runat="server">
 <!--____________________________________________________ Header______________________________________________-->
      <header id="main-headerXD" class="auto-style1">
-        <a id="logo-header" href="#"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario</font></h1></a>
+        <a id="logo-header" href="#"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">WARIO</font></h1></a>
          &nbsp;&nbsp;&nbsp;&nbsp;<a id="logo-header" href="#"><h1 class ="site-names" style="width: 351px; height: 3px"><font color="yellow" size="2">
          Bienvenido: &nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lbl_usuarios" runat="server" Text=""></asp:Label></h1></a>
          <nav>

@@ -40,7 +40,7 @@ namespace OperadorPrueba1._3
         }
         protected void BindGridview()
         {
-            adap = new MySqlDataAdapter("select * from tareas_Asignadas", cn);
+            adap = new MySqlDataAdapter("select * from tareas_Asignadas ORDER BY Idtarea DESC", cn);
             dt = new DataTable();
             adap.Fill(dt);
             gvEmpInfo.DataSource = dt;
@@ -69,14 +69,19 @@ namespace OperadorPrueba1._3
                 System.Web.UI.WebControls.CheckBox chk = (System.Web.UI.WebControls.CheckBox)gvEmpInfo.Rows[i].Cells[0].FindControl("chkbox");
                 if (chk.Checked)
                 {
-                    dt = MoveRows(gvEmpInfo.Rows[i], dt);
+                    if(chk.Checked == true)
+                    {
+                        dt = MoveRows(gvEmpInfo.Rows[i], dt);
+                    }
 
                 }
                 else
                 {
-                    dt = RemoveRow(gvEmpInfo.Rows[i], dt);
+                        dt = RemoveRow(gvEmpInfo.Rows[i], dt);
+                 
                 }
             }
+
             ViewState["EmpDetails"] = dt;
         }
         private DataTable CreateTable()
@@ -98,7 +103,7 @@ namespace OperadorPrueba1._3
         {
             DataRow[] dr = dt.Select("Idtarea = '" + gvRow.Cells[1].Text + "'");
             if (dr.Length <= 0)
-            {
+            {              
                 dt.Rows.Add();
                 int rowscount = dt.Rows.Count - 1;
                 dt.Rows[rowscount]["Idtarea"] = gvRow.Cells[1].Text;
@@ -175,6 +180,18 @@ namespace OperadorPrueba1._3
 
             }
             return dt;
+        }
+        protected void btn_Menu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OnePErmisos.aspx");
+        }
+        protected void gvMovedRows_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void gvEmpInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

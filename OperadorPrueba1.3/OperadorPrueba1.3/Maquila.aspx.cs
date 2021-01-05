@@ -38,7 +38,7 @@ namespace OperadorPrueba1._3
             Historial_Total.DataSource = consultar("Select fechaAsignacion as 'Asignacion:', Asignador as 'Por:'," +
                                                     " emplinea as 'Para:', producto as 'Producto', modelo as 'Modelo'," +
                                                     "unidad as 'Unidad', procesos as 'Procesos', cantidad as 'Cantidad'" +
-                                                    " from tareas_Asignadas_Maquila;");
+                                                    " from tareas_Asignadas_Maquila ORDER BY Idtarea DESC;");
             Historial_Total.DataBind();
         }
         public DataSet consultar(string strSQL)
@@ -214,8 +214,13 @@ namespace OperadorPrueba1._3
                                                         " producto as 'Producto', modelo as 'Modelo'," +
                                                         " unidad as 'Unidad', procesos as 'Procesos', " +
                                                         "cantidad as 'Cantidad' from tareas_Asignadas_Maquila" +
-                                                        " where emplinea = '" + line.Text + "'");
+                                                        " where emplinea = '" + line.Text + "'ORDER BY Idtarea DESC");
             Historial_D_usuario.DataBind();
+        }
+
+        protected void btn_Menu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OnePErmisos.aspx");
         }
     }
 }

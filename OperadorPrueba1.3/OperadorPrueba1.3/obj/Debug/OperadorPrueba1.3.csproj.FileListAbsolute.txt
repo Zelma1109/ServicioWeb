@@ -139,6 +139,8 @@ C:\Users\Zelma\Desktop\RESIDENCIAS\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug
 C:\Users\Zelma\Desktop\RESIDENCIAS\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.dll
 C:\Users\Zelma\Desktop\RESIDENCIAS\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.pdb
 C:\Users\Zelma\Desktop\RESIDENCIAS\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.csprojAssemblyReference.cache
+C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.csprojAssemblyReference.cache
+C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.csproj.CoreCompileInputs.cache
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\bin\OperadorPrueba1.3.dll.config
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\bin\OperadorPrueba1.3.dll
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\bin\OperadorPrueba1.3.pdb
@@ -217,8 +219,6 @@ C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorP
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\bin\System.Numerics.Vectors.xml
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.csproj.CoreCompileInputs.cache
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.csproj.CopyComplete
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.dll
 C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.pdb
-C:\Users\Zelma\Documents\GitHub\servicio\ServicioWeb\OperadorPrueba1.3\OperadorPrueba1.3\obj\Debug\OperadorPrueba1.3.csprojAssemblyReference.cache

@@ -33,7 +33,7 @@ namespace OperadorPrueba1._3
         }
         protected void BindGridview()
         {
-            adap = new MySqlDataAdapter("select * from tareas_Asignadas_Maquila", cn);
+            adap = new MySqlDataAdapter("select * from tareas_Asignadas_Maquila ORDER BY Idtarea DESC", cn);
             dt = new DataTable();
             adap.Fill(dt);
             gvEmpInfo.DataSource = dt;
@@ -175,6 +175,11 @@ namespace OperadorPrueba1._3
             Response.Redirect("Login.aspx");
             //Aqui se reinicia la sesion XD
             Secc ss = new Secc();
+        }
+
+        protected void btn_Menu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OnePErmisos.aspx");
         }
     }
 }

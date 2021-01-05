@@ -54,7 +54,7 @@
 #search {
   display: inline-block;
   width: 100%;
-  height: 300px;
+  height: 200px;
   margin: 10px auto;
   overflow: auto;
   -moz-box-shadow: #555 0 0 8px;
@@ -66,7 +66,26 @@
 #results {
   display: inline-block;
   width: 100%;
-  height: 300px;
+  height: 200px;
+  margin: 10px auto;
+  overflow: auto;
+  -moz-box-shadow: #555 0 0 8px;
+  -webkit-box-shadow: #555 0 0 8px;
+  -o-box-shadow: #555 0 0 8px;
+  box-shadow: #555 0 0 8px;
+}
+
+#TITULO {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  overflow: auto;
+  
+}
+#Xd {
+  display: inline-block;
+  width: 100%;
+  height: 250px;
   margin: 10px auto;
   overflow: auto;
   -moz-box-shadow: #555 0 0 8px;
@@ -91,8 +110,27 @@
     <form id="form1" runat="server">
 <!--____________________________________________________ Header______________________________________________-->
     <header id="main-headerXD" class="auto-style1">
-        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario&nbsp;&nbsp;&nbsp;</font></h1></a>
-         &nbsp;&nbsp;&nbsp;&nbsp;
+        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">WARIO&nbsp;&nbsp;&nbsp;</font></h1></a>
+         <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+               <asp:Button ID="btn_Menu" runat="server" Text=" Menu" BackColor="#24292E" BorderColor="#24292E" ForeColor="#CCCCCC" Width="129px" BorderStyle="None" OnClick="btn_Menu_Click"></asp:Button>
+            </h1>
+        </a>
+
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </h1>
+        </a>
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+                <font color="yellow" size="3" text-align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    CHECADOR DE TAREAS EN EL TALLER&nbsp;&nbsp;&nbsp;</font>
+            </h1>
+        </a>
+
         <nav>
             <ul><font color="yellow">
                 <a id="logo-header" href="#" class="auto-style8">
@@ -107,7 +145,14 @@
 <!--____________________________________________________ Developer______________________________________________-->
       <div>
         <section>
-            <div id="content">
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;TAREAS POR COMPLETAR</h4><br />
+                     <div id="content">                   
  <!--___________________________________________________________________________________________________________-->
                                 <div id="search" class="auto-style6">                                                            
                                               <div>  
@@ -115,16 +160,7 @@
                                                 <div class="row">
                                                   <div class="col-md-12">
                                                      <div style="width:100%; height:100%; overflow:auto;">
-                                                       <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        TAREAS POR COMPLETAR</b><br />
+                                                       
                                                           
                                                     <asp:GridView ID="gvEmpInfo" AutoGenerateColumns="False" CellPadding="4" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" SelectedRowStyle-HorizontalAlign="Justify" HorizontalAlign="Center" >  
                                                             <Columns>  
@@ -164,25 +200,21 @@
                                     </div>
                                  </div>
 
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;TAREAS TERMINADAS</h4><br />
  <!--_______________________________________________________________________________________________________-->
 
                         <div id="results" class="auto-style7">
-                        <br />
                              <div>  
                                <!-- <div class="container">-->
                                      <div class="row">
-                                          <div class="col-md-12">
-                                                     <b >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAREAS COMPLETADAS</b> <br />
-                                                    
-                                <asp:GridView ID="gvMovedRows" AutoGenerateColumns="False" CellPadding="4" runat="server" ForeColor="#333333"  BackColor="White" HorizontalAlign="Center">  
+                                          <div class="col-md-12">                                                                                            
+                                <asp:GridView ID="gvMovedRows" AutoGenerateColumns="False" CellPadding="4" runat="server" ForeColor="#333333"  BackColor="White" HorizontalAlign="Center" OnSelectedIndexChanged="gvMovedRows_SelectedIndexChanged">  
                                         <AlternatingRowStyle BackColor="White" BorderColor="black" ForeColor="#284775" HorizontalAlign="Center" BorderStyle="None" BorderWidth="1px"/>  
                                     <Columns>  
                                             <asp:BoundField HeaderText="ID" DataField="Idtarea" />  
@@ -209,6 +241,8 @@
                      </div>
                   </div>
                </div>
+            <div></div>
+            <br />
       </section>
    </div>
 

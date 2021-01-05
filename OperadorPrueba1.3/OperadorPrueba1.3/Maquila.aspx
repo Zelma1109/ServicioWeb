@@ -94,8 +94,23 @@
     <form id="form1" runat="server">
 <!--____________________________________________________ Header______________________________________________-->
      <header id="main-headerXD" class="auto-style1">
-        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario&nbsp;&nbsp;&nbsp;</font></h1></a>
-         &nbsp;&nbsp;&nbsp;&nbsp;
+        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">WARIO&nbsp;&nbsp;&nbsp;</font></h1></a>
+         <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+               <asp:Button ID="btn_Menu" runat="server" Text=" Menu" BackColor="#24292E" BorderColor="#24292E" ForeColor="#CCCCCC" Width="129px" BorderStyle="None" OnClick="btn_Menu_Click"></asp:Button>
+            </h1>
+        </a>
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </h1>
+        </a>
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+                <font color="yellow" size="3" text-align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNACION DE TAREAS A MAQUILAS&nbsp;&nbsp;&nbsp;</font>
+            </h1>
+        </a>
         <nav>
             <ul><font color="yellow">
                 <a id="logo-header" href="#" class="auto-style8">
@@ -177,7 +192,7 @@
                                                 <div class="row">
                                                   <div class="col-md-12">
                                                      <div style="width:100%; height:100%; overflow:auto;">
-                                                             <asp:GridView ID="Historial_D_usuario" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" Height="25px" Width="1000px" OnSelectedIndexChanged="Historial_D_usuario_SelectedIndexChanged" CellSpacing="2" ForeColor="Black">
+                                                             <asp:GridView ID="Historial_D_usuario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
                                                                  <FooterStyle BackColor="#CCCCCC" />
                                                                  <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                                                                  <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
@@ -186,7 +201,7 @@
                                                                  <SortedAscendingCellStyle BackColor="#F1F1F1" />
                                                                  <SortedAscendingHeaderStyle BackColor="#808080" />
                                                                  <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                                                                 <SortedDescendingHeaderStyle BackColor="#383838" />
+                                                                 <SortedDescendingHeaderStyle BackColor="#383838" />  
                                                        </asp:GridView>
                                                     </div>
                                                  </div>
@@ -210,7 +225,7 @@
                                                 <div class="row">
                                                   <div class="col-md-12">
                                                      <div style="width:100%; height:100%; overflow:auto;">
-                                                             <asp:GridView ID="Historial_Total" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
+                                                             <asp:GridView ID="Historial_Total" runat="server" BackColor="White" BorderColor="Black" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="25px" Width="1000px">
                                                                  <FooterStyle BackColor="#CCCCCC" />
                                                                  <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                                                                  <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />

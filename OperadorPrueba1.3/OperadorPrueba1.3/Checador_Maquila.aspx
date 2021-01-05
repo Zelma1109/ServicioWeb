@@ -92,8 +92,25 @@
  <form id="form1" runat="server"> 
 <!--____________________________________________________ Header_________________________________________________-->
     <header id="main-headerXD" class="auto-style1">
-        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">Wario&nbsp;&nbsp;&nbsp;</font></h1></a>
-         &nbsp;&nbsp;&nbsp;&nbsp;
+        <a id="logo-header" href="#" class="auto-style8"><h1 class ="site-name"><font color="yellow" size="6" text-align="center">WARIO&nbsp;&nbsp;&nbsp;</font></h1></a>
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+               <asp:Button ID="btn_Menu" runat="server" Text=" Menu" BackColor="#24292E" BorderColor="#24292E" ForeColor="#CCCCCC" Width="129px" BorderStyle="None" OnClick="btn_Menu_Click"></asp:Button>
+            </h1>
+        </a>
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </h1>
+        </a>
+        <a id="logo-header" href="#" class="auto-style8">
+            <h1 class ="site-name">
+                <font color="yellow" size="3" text-align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    CHECADOR DE TAREAS DE MAQUILAS&nbsp;&nbsp;&nbsp;</font>
+            </h1>
+        </a>
         <nav>
             <ul><font color="yellow">
                 <a id="logo-header" href="#" class="auto-style8">
