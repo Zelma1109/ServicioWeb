@@ -109,9 +109,13 @@ namespace OperadorPrueba1._3
                                                 " unidad, procesos, cantidad)" +
                                                  "Values('" + lbl_Usuario.Text+ "','" + line.Text + "','" + Producto.Text + "','" + Modelos.Text + "','" 
                                                  + unidad.Text + "','" + cbx + "','" + txt_c.Text +"')", cn);
-
+            MySqlCommand cmD = new MySqlCommand("INSERT INTO TareasParaTaller(Asignador, emplinea, producto, modelo," +
+                                               " unidad, procesos, cantidad)" +
+                                                "Values('" + lbl_Usuario.Text + "','" + line.Text + "','" + Producto.Text + "','" + Modelos.Text + "','"
+                                                + unidad.Text + "','" + cbx + "','" + txt_c.Text + "')", cn);
             cn.Open();
             cmd.ExecuteNonQuery();
+            cmD.ExecuteNonQuery();
             cn.Close();
             MessageBox.Show("ASIGNACION CORRECTA");
 

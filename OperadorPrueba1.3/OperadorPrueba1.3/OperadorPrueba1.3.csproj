@@ -128,7 +128,11 @@
     <Content Include="Checador_Maquila.aspx" />
     <Content Include="img\1.jpg" />
     <Content Include="img\login.css" />
+    <Content Include="img\no.png" />
+    <Content Include="img\oo.png" />
     <Content Include="img\war.jpg" />
+    <Content Include="img\yes.png" />
+    <Content Include="img\yy.jpg" />
     <Content Include="Maquila.aspx" />
     <Content Include="onePErmisos.aspx" />
     <Content Include="Sorteador.aspx" />
