@@ -42,6 +42,15 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.Button salir;
 
         /// <summary>
+        /// Control btn_Registrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Registrar;
+
+        /// <summary>
         /// Control gvEmpInfo.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,22 @@ namespace OperadorPrueba1._3
         protected global::System.Web.UI.WebControls.GridView gvEmpInfo;
 
         /// <summary>
-        /// Control gvMovedRows.
+        /// Control btn_desregistrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMovedRows;
+        protected global::System.Web.UI.WebControls.Button btn_desregistrar;
+
+        /// <summary>
+        /// Control Terminado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Terminado;
 
         /// <summary>
         /// Control lbl_Usuario.

@@ -69,7 +69,7 @@ namespace OperadorPrueba1._3
         {
             Processos.DataSource = consultar("select * from procesos");
             Processos.DataTextField = "proceso";
-            Processos.DataValueField = "idProcs";
+            Processos.DataValueField = "idPross";
             Processos.DataBind();
             Processos.ClearSelection();
         }

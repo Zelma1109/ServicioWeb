@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using CheckBox = System.Web.UI.WebControls.CheckBox;
 
 namespace OperadorPrueba1._3
 {
@@ -24,6 +25,7 @@ namespace OperadorPrueba1._3
             if (!IsPostBack)
             {
                 BindGridview();
+                BindGridviewTer();
             }
 
         }
@@ -33,141 +35,22 @@ namespace OperadorPrueba1._3
         }
         protected void BindGridview()
         {
-            adap = new MySqlDataAdapter("select * from tareas_Asignadas_Maquila ORDER BY Idtarea DESC", cn);
+            adap = new MySqlDataAdapter("select * from tareas_Asignadas_Maquila1 ORDER BY Idtarea DESC", cn);
             dt = new DataTable();
             adap.Fill(dt);
             gvEmpInfo.DataSource = dt;
             gvEmpInfo.DataBind();
         }
+        protected void BindGridviewTer()
+        {
+            adap = new MySqlDataAdapter("select * from Terminado_Maquila ORDER BY Idtarea DESC", cn);
+            dt = new DataTable();
+            adap.Fill(dt);
+            Terminado.DataSource = dt;
+            Terminado.DataBind();
+        }
         protected void ChckedChanged(object sender, EventArgs e)
         {
-            GetSelectedRows();
-            BindSecondGrid();
-        }
-        protected void BindSecondGrid()
-        {
-            DataTable dt = (DataTable)ViewState["EmpDetails"];
-            gvMovedRows.DataSource = dt;
-            gvMovedRows.DataBind();
-        }
-        private void GetSelectedRows()
-        {
-            DataTable dt;
-            if (ViewState["EmpDetails"] != null)
-                dt = (DataTable)ViewState["EmpDetails"];
-            else
-                dt = CreateTable();
-            for (int i = 0; i < gvEmpInfo.Rows.Count; i++)
-            {
-                System.Web.UI.WebControls.CheckBox chk = (System.Web.UI.WebControls.CheckBox)gvEmpInfo.Rows[i].Cells[0].FindControl("chkbox");
-                if (chk.Checked)
-                {
-                    dt = MoveRows(gvEmpInfo.Rows[i], dt);
-
-                }
-                else
-                {
-                    dt = RemoveRow(gvEmpInfo.Rows[i], dt);
-                }
-            }
-            ViewState["EmpDetails"] = dt;
-        }
-        private DataTable CreateTable()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Idtarea");
-            dt.Columns.Add("fechaAsignacion");
-            dt.Columns.Add("Asignador");
-            dt.Columns.Add("emplinea");
-            dt.Columns.Add("producto");
-            dt.Columns.Add("modelo");
-            dt.Columns.Add("unidad");
-            dt.Columns.Add("procesos");
-            dt.Columns.Add("cantidad");
-            dt.AcceptChanges();
-            return dt;
-        }
-        private DataTable MoveRows(GridViewRow gvRow, DataTable dt)
-        {
-            DataRow[] dr = dt.Select("Idtarea = '" + gvRow.Cells[1].Text + "'");
-            if (dr.Length <= 0)
-            {
-                dt.Rows.Add();
-                int rowscount = dt.Rows.Count - 1;
-                dt.Rows[rowscount]["Idtarea"] = gvRow.Cells[1].Text;
-                dt.Rows[rowscount]["fechaAsignacion"] = gvRow.Cells[2].Text;
-                dt.Rows[rowscount]["Asignador"] = gvRow.Cells[3].Text;
-                dt.Rows[rowscount]["emplinea"] = gvRow.Cells[4].Text;
-                dt.Rows[rowscount]["producto"] = gvRow.Cells[5].Text;
-                dt.Rows[rowscount]["modelo"] = gvRow.Cells[6].Text;
-                dt.Rows[rowscount]["unidad"] = gvRow.Cells[7].Text;
-                dt.Rows[rowscount]["procesos"] = gvRow.Cells[8].Text;
-                dt.Rows[rowscount]["cantidad"] = gvRow.Cells[9].Text;
-                dt.AcceptChanges();
-
-                cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
-                try
-                {
-                    //procedimiento  almacenado que permite guardar los registros evitando duplicaciones y redundancia de datos
-                    MySqlCommand cmd = new MySqlCommand("Finish", cn);
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("p_Idtarea", gvRow.Cells[1].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_fechaAsignacion", gvRow.Cells[2].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_Asignador", gvRow.Cells[3].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_emplinea", gvRow.Cells[4].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_producto", gvRow.Cells[5].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_modelo", gvRow.Cells[6].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_unidad", gvRow.Cells[7].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_procesos", gvRow.Cells[8].Text.ToString());
-                    cmd.Parameters.AddWithValue("p_cantidad", gvRow.Cells[9].Text.ToString());
-
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                    
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("ERROR DE CONEXION");
-                }
-
-            }
-            return dt;
-        }
-        private DataTable RemoveRow(GridViewRow gvRow, DataTable dt)
-        {
-            DataRow[] dr = dt.Select("Idtarea = '" + gvRow.Cells[1].Text + "'");
-            if (dr.Length > 0)
-            {
-                dt.Rows.Remove(dr[0]);
-                dt.AcceptChanges();
-
-
-                cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
-                try
-                {
-                     
-                            //procedimiento  almacenado que permite guardar los registros evitando duplicaciones y redundancia de datos
-                            MySqlCommand cmd = new MySqlCommand("Finish2", cn);
-
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("p_Idtarea", gvRow.Cells[1].Text.ToString());
-
-                            cn.Open();
-                            cmd.ExecuteNonQuery();
-                            cn.Close();
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("ERROR DE CONEXION");
-                }
-
-
-            }
-            return dt;           
         }
         protected void salir_Click(object sender, EventArgs e)
         {
@@ -176,10 +59,127 @@ namespace OperadorPrueba1._3
             //Aqui se reinicia la sesion XD
             Secc ss = new Secc();
         }
-
         protected void btn_Menu_Click(object sender, EventArgs e)
         {
             Response.Redirect("OnePErmisos.aspx");
+        }
+        protected void btn_Registrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Las tareas a registrar ¿estan correctas?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                foreach (GridViewRow row in gvEmpInfo.Rows)
+                {
+                    CheckBox chkitem = (CheckBox)(row.FindControl("chkbox"));
+
+                    if (chkitem.Checked)
+                    {
+                        //Invocar al método que inserta los registros/
+                        cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
+                        MySqlCommand cmd = new MySqlCommand("Finish_Mac", cn);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("p_Idtarea", row.Cells[1].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_fechaAsignacion", row.Cells[2].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_Asignador", row.Cells[3].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_emplinea", row.Cells[4].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_producto", row.Cells[5].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_modelo", row.Cells[6].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_unidad", row.Cells[7].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_procesos", row.Cells[8].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_cantidad", row.Cells[9].Text.Trim());
+
+
+                        //procedimiento  almacenado que permite guardar los registros evitando duplicaciones y redundancia de datos
+                        MySqlCommand cmdD = new MySqlCommand("FinishTareasMaquila", cn);
+
+                        cmdD.CommandType = CommandType.StoredProcedure;
+                        cmdD.Parameters.AddWithValue("p_Idtarea", row.Cells[1].Text.Trim());
+
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                        cmdD.ExecuteNonQuery();
+                        cn.Close();
+
+                        //una vez que se guardan cargan en la siguiente de completadas
+                        BindGridview();
+                        BindGridviewTer();
+                    }
+                }
+            }
+            else
+            {
+                foreach (GridViewRow row in gvEmpInfo.Rows)
+                {
+
+                    CheckBox check = row.FindControl("chkbox") as CheckBox;
+                    check.Checked = false;
+                }
+            }
+        }
+        protected void btn_desRegistrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Registrar las tareas elaboradas en la semana?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                foreach (GridViewRow row in Terminado.Rows)
+                {
+                    CheckBox chkitem = (CheckBox)(row.FindControl("chkbox2"));
+
+                    if (chkitem.Checked)
+                    {
+                        //Invocar al método que inserta los registros/
+                        cn = new MySqlConnection("Server=198.71.227.83; port=3306; username=AdministradorBD; pwd=hewh700307; Database=Wario_01;");
+                        MySqlCommand cmd = new MySqlCommand("PorSemanaMAc", cn);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("p_Idtarea", row.Cells[1].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_fechaAsignacion", row.Cells[2].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_Asignador", row.Cells[3].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_emplinea", row.Cells[4].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_producto", row.Cells[5].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_modelo", row.Cells[6].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_unidad", row.Cells[7].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_procesos", row.Cells[8].Text.Trim());
+                        cmd.Parameters.AddWithValue("p_cantidad", row.Cells[9].Text.Trim());
+
+
+                        //procedimiento  almacenado que permite guardar los registros evitando duplicaciones y redundancia de datos
+                        MySqlCommand cmdD = new MySqlCommand("LimpiarSemanaMAcOP", cn);
+
+                        cmdD.CommandType = CommandType.StoredProcedure;
+                        cmdD.Parameters.AddWithValue("p_Idtarea", row.Cells[1].Text.Trim());
+
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                        cmdD.ExecuteNonQuery();
+                        cn.Close();
+
+                        //una vez que se guardan cargan en la siguiente de completadas
+                        BindGridviewTer();
+                    }
+                }
+            }
+            else
+            {
+                foreach (GridViewRow row in Terminado.Rows)
+                {
+
+                    CheckBox check = row.FindControl("chkbox2") as CheckBox;
+                    check.Checked = false;
+                }
+            }
+
+        }
+
+        protected void salir_Click1(object sender, EventArgs e)
+        {
+            //Cerramos y cerramos sesion
+            Response.Redirect("Login.aspx");
+            //Aqui se reinicia la sesion XD
+            Secc ss = new Secc();
         }
     }
 }

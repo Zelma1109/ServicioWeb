@@ -105,8 +105,14 @@ namespace OperadorPrueba1._3
                                                  "Values('" + lbl_Usuario.Text + "','" + line.Text + "','" + Producto.Text + "','" + Modelos.Text + "','"
                                                  + unidad.Text + "','" + cbx + "','" + txt_c.Text + "')", cn);
 
+            MySqlCommand cMd = new MySqlCommand("INSERT INTO tareas_Asignadas_Maquila1(Asignador, emplinea, producto, modelo," +
+                                                " unidad, procesos, cantidad)" +
+                                                 "Values('" + lbl_Usuario.Text + "','" + line.Text + "','" + Producto.Text + "','" + Modelos.Text + "','"
+                                                 + unidad.Text + "','" + cbx + "','" + txt_c.Text + "')", cn);
+
             cn.Open();
             cmd.ExecuteNonQuery();
+            cMd.ExecuteNonQuery();
             cn.Close();
             MessageBox.Show("ASIGNACION CORRECTA");
 

@@ -124,7 +124,7 @@
             <ul><font color="yellow">
                 <a id="logo-header" href="#" class="auto-style8">
                     <h1 class ="site-name">
-                            <asp:Button ID="salir" runat="server" Text="Cerrar Sesion" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow"  Width="129px" BorderStyle="None" ></asp:Button>
+                            <asp:Button ID="salir" runat="server" Text="Cerrar Sesion" BackColor="#24292E" BorderColor="#24292E" ForeColor="Yellow"  Width="129px" BorderStyle="None" OnClick="salir_Click1" ></asp:Button>
                     </h1>
                 </a>
                 </font>
@@ -135,14 +135,12 @@
      <div>
         <section>
             <br />
-             <h4><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h4><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;TAREAS POR COMPLETAR</b></h4>
-                      <div id="content">
+            TAREAS POR COMPLETAR</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btn_Registrar" runat="server" Text="TAREAS TERMINADAS" OnClick="btn_Registrar_Click" /></h4>
+                     <div id="content">    
  <!--___________________________________________________________________________________________________________-->
                                 <div id="search" class="auto-style6">                                                            
                                               <div>  
@@ -153,9 +151,9 @@
                                                       
                                                     <asp:GridView ID="gvEmpInfo" AutoGenerateColumns="False" CellPadding="4" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" SelectedRowStyle-HorizontalAlign="Justify" HorizontalAlign="Center" >  
                                                             <Columns>  
-                                                                <asp:TemplateField>  
+                                                                <asp:TemplateField HeaderText="Chk">  
                                                                     <ItemTemplate>  
-                                                                        <asp:CheckBox ID="chkbox" runat="server" AutoPostBack="true" OnCheckedChanged="ChckedChanged" />  
+                                                                        <asp:CheckBox ID="chkbox" runat="server" AutoPostBack="true" />  
                                                                     </ItemTemplate>  
                                                                 </asp:TemplateField > 
                                                                 
@@ -188,52 +186,61 @@
                                       </div>
                                     </div>
                                  </div>
-            
             <h4><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TAREAS TERMINADAS</b></h4>
+            TAREAS TERMINADAS</b>&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btn_desregistrar" runat="server" Text="TAREAS DE LA SEMANA" OnClick="btn_desRegistrar_Click" /></h4>
 
  <!--_______________________________________________________________________________________________________-->
+            <div id="content"> 
+                <div id="results" class="auto-style6">
+                 <div>   
+                      <!-- <div class="container">-->
+                             <div class="row">
+                              <div class="col-md-12">
+                                 <div style="width:100%; height:100%; overflow:auto;">
+                                <asp:GridView ID="Terminado" AutoGenerateColumns="False" CellPadding="4" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" SelectedRowStyle-HorizontalAlign="Justify" HorizontalAlign="Center" >  
+                                     <Columns>  
+                                         <asp:TemplateField HeaderText="Chk2">  
+                                          <ItemTemplate>  
+                                             <asp:CheckBox ID="chkbox2" runat="server" AutoPostBack="true"/>  
+                                          </ItemTemplate>  
+                                          </asp:TemplateField > 
 
-                        <div id="results" class="auto-style7">
-                        <br />
-                             <div>  
-                               <!-- <div class="container">-->
-                                     <div class="row">
-                                          <div class="col-md-12">
-                                  <asp:GridView ID="gvMovedRows" AutoGenerateColumns="False" CellPadding="4" runat="server" ForeColor="#333333"  BackColor="White" HorizontalAlign="Center">  
-                                        <AlternatingRowStyle BackColor="White" BorderColor="black" ForeColor="#284775" HorizontalAlign="Center" BorderStyle="None" BorderWidth="1px"/>  
-                                    <Columns>  
-                                            <asp:BoundField HeaderText="ID" DataField="Idtarea" />  
-                                            <asp:BoundField HeaderText="ASIGNACION" DataField="fechaAsignacion" />  
-                                            <asp:BoundField HeaderText="POR:" DataField="Asignador" />  
-                                            <asp:BoundField HeaderText="PARA:" DataField="emplinea" /> 
-                                            <asp:BoundField HeaderText="PRODUCTO" DataField="producto" />  
-                                            <asp:BoundField HeaderText="MODELO" DataField="modelo" />  
-                                            <asp:BoundField HeaderText="UNIDAD" DataField="unidad" />  
-                                            <asp:BoundField HeaderText="PROCESOS" DataField="procesos" /> 
-                                            <asp:BoundField HeaderText="CANTIDAD" DataField="cantidad" /> 
-                                    </Columns>  
-                                            <FooterStyle BackColor="#CCCCCC" />
-                                            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                                            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                                            <RowStyle BackColor="White" />
-                                            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                                            <SortedAscendingHeaderStyle BackColor="#808080" />
-                                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                                            <SortedDescendingHeaderStyle BackColor="#383838" />  
-                                </asp:GridView>  
+                                        <asp:BoundField HeaderText="ID" DataField="Idtarea" />  
+                                        <asp:BoundField HeaderText="AIGNACION " DataField="fechaAsignacion" />  
+                                        <asp:BoundField HeaderText="POR:" DataField="Asignador" />  
+                                        <asp:BoundField HeaderText="PARA:" DataField="emplinea" /> 
+                                        <asp:BoundField HeaderText="PRODUCTO  " DataField="producto" />  
+                                        <asp:BoundField HeaderText="MODELO  " DataField="modelo" />  
+                                        <asp:BoundField HeaderText="UNIDAD  " DataField="unidad" />  
+                                        <asp:BoundField HeaderText="PROCESOS  " DataField="procesos" /> 
+                                        <asp:BoundField HeaderText="CANTIDAD" DataField="cantidad" />
+                                         
+                                      </Columns>  
+                                        
+
+                                      <FooterStyle BackColor="#CCCCCC" />
+                                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                        <RowStyle BackColor="White" />
+                                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                        <SortedDescendingHeaderStyle BackColor="#383838" />                                                         
+                            </asp:GridView>  
                         </div>
                      </div>
                   </div>
+                 </div>
                </div>
-         </section>
-       </div>
+            </div>                      
+            <div></div>
+            <br />
+      </section>
+   </div>
  <!--__________________________________________________Footer_________________________________________________-->
    <footer id="main-footer">
         <p><font color="yellow">&copy;Guantes Industriales Wario
